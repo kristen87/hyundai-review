@@ -1,0 +1,31 @@
+name: 현대카드 앱 주간 리뷰 수집
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'   # 매주 월요일 00:00 UTC = 09:00 KST
+  workflow_dispatch:        # 수동 실행 버튼도 제공
+
+jobs:
+  collect-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 의존성 설치
+        run: pip install requests beautifulsoup4
+
+      - name: 리뷰 수집 및 리포트 생성 + Netlify 배포
+        env:
+          CI: "true"
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          NETLIFY_SITE: ${{ secrets.NETLIFY_SITE }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: python collector.py

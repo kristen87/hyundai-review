@@ -1,0 +1,17 @@
+# 수집 데이터 및 리포트 (자동 생성됨)
+data/
+reports/
+
+# 로그
+*.log
+
+# Mac 로컬 설정
+com.hyundai.review.plist
+run_weekly.sh
+
+# Python 캐시
+__pycache__/
+*.pyc
+
+# 환경변수 파일
+.env
