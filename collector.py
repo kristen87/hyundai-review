@@ -34,13 +34,15 @@ BASE_DIR = find_workspace()
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
 # ============================================================
-# API 키 설정 (환경변수 우선, 없으면 하드코딩 값 사용)
+# API 키 설정
+# GitHub Actions: 환경변수(Secrets)에서 자동으로 읽어옴
+# 로컬 Mac: 아래 값을 직접 입력하세요 (이 파일은 GitHub에 올리지 마세요)
 # ============================================================
 NAVER_CLIENT_ID     = os.environ.get("NAVER_CLIENT_ID",     "x6w93pwB4hZcOnLmeEi3")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "btnmtiUL7B")
 YOUTUBE_API_KEY     = os.environ.get("YOUTUBE_API_KEY",     "")
 NETLIFY_SITE        = os.environ.get("NETLIFY_SITE",        "1486c4a4-e066-49e5-8424-a4b966790288")
-NETLIFY_AUTH_TOKEN  = os.environ.get("NETLIFY_AUTH_TOKEN",  "nfp_oFCZKMfens6jTkWpYJmdj3iwuCGJpwCT8331")
+NETLIFY_AUTH_TOKEN  = os.environ.get("NETLIFY_AUTH_TOKEN",  "")  # 토큰은 환경변수로만 사용
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 SEEN_IDS_FILE = os.path.join(DATA_DIR, "seen_ids.json")
 
@@ -1248,6 +1250,12 @@ a{{color:inherit;text-decoration:none}}
 /* 섹션 */
 .sec{{background:#fff;border-radius:14px;padding:26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}}
 .sec h2{{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}}
+.sec-toggle{{width:100%;display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;gap:8px}}
+.sec-toggle::-webkit-details-marker{{display:none}}
+.sec-toggle h2{{margin-bottom:0;flex:1}}
+.sec-arrow{{font-size:13px;color:#8e8e93;transition:transform .25s;flex-shrink:0}}
+details.sec-collapsible[open] .sec-arrow{{transform:rotate(180deg)}}
+details.sec-collapsible .sec-body{{margin-top:18px}}
 .sec h2 .bar{{width:4px;height:20px;border-radius:2px;display:inline-block}}
 .bar-red{{background:#ff453a}}.bar-green{{background:#30d158}}.bar-blue{{background:#0a84ff}}.bar-gray{{background:#636366}}
 
@@ -1341,8 +1349,13 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
 
 <!-- 소스별 현황 -->
 <div class="sec">
-  <h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
-  {source_bars if source_bars else '<p class="empty">수집된 데이터 없음</p>'}
+  <details class="sec-collapsible">
+    <summary class="sec-toggle">
+      <h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
+      <span class="sec-arrow">▼</span>
+    </summary>
+    <div class="sec-body">{source_bars if source_bars else '<p class="empty">수집된 데이터 없음</p>'}</div>
+  </details>
 </div>
 
 <!-- 부정 리뷰 -->
