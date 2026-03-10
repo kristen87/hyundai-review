@@ -1470,8 +1470,9 @@ def main():
     print(f"리포트 저장: {report_path}")
     print(f"{'='*50}")
 
-    # Netlify 배포
-    deploy_to_netlify(report_path)
+    # Netlify 배포 (CI 환경에서는 GitHub Actions에서 별도 처리)
+    if not os.environ.get("CI"):
+        deploy_to_netlify(report_path)
 
     return report_path
 

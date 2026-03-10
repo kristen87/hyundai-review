@@ -22,9 +22,11 @@ jobs:
           python-version: '3.11'
 
       - name: 의존성 설치
-        run: pip install requests beautifulsoup4
+        run: |
+          pip install requests beautifulsoup4
+          npm install -g netlify-cli
 
-      - name: 리뷰 수집 및 리포트 생성 + Netlify 배포
+      - name: 리뷰 수집 및 리포트 생성
         env:
           CI: "true"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -32,3 +34,15 @@ jobs:
           NETLIFY_SITE: ${{ secrets.NETLIFY_SITE }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: python collector.py
+
+      - name: 최신 리포트를 index.html로 복사
+        run: |
+          mkdir -p deploy
+          ls reports/*.html | sort | tail -1 | xargs -I{} cp {} deploy/index.html
+
+      - name: Netlify 배포
+        run: |
+          netlify deploy --prod \
+            --dir deploy \
+            --site ${{ secrets.NETLIFY_SITE }} \
+            --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
