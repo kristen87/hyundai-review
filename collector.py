@@ -41,8 +41,6 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 NAVER_CLIENT_ID     = os.environ.get("NAVER_CLIENT_ID",     "x6w93pwB4hZcOnLmeEi3")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "btnmtiUL7B")
 YOUTUBE_API_KEY     = os.environ.get("YOUTUBE_API_KEY",     "")
-NETLIFY_SITE        = os.environ.get("NETLIFY_SITE",        "1486c4a4-e066-49e5-8424-a4b966790288")
-NETLIFY_AUTH_TOKEN  = os.environ.get("NETLIFY_AUTH_TOKEN",  "")  # 토큰은 환경변수로만 사용
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 SEEN_IDS_FILE = os.path.join(DATA_DIR, "seen_ids.json")
 
@@ -1607,7 +1605,7 @@ def main():
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(html)
 
-    # 루트 index.html 업데이트 (netlify deploy --dir=. 시 사용)
+    # 루트 index.html 업데이트 (GitHub Pages 배포용)
     index_path = os.path.join(os.path.dirname(REPORTS_DIR), "index.html")
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
@@ -1624,9 +1622,6 @@ def main():
     print(f"리포트 저장: {report_path}")
     print(f"{'='*50}")
 
-    # Netlify 배포 (CI 환경에서는 GitHub Actions에서 별도 처리)
-    if not os.environ.get("CI"):
-        deploy_to_netlify(report_path)
 
     return report_path
 
@@ -1649,45 +1644,3 @@ def update_manifest(report_name, start_date, end_date):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
     print(f"manifest.json 업데이트: {len(manifest)}개 리포트")
 
-
-def deploy_to_netlify(report_path):
-    """최신 리포트를 Netlify API로 배포 (CLI 불필요)"""
-    import io, zipfile
-    if not NETLIFY_AUTH_TOKEN or not NETLIFY_SITE:
-        print("Netlify 설정이 없어 배포를 건너뜁니다.")
-        return
-
-    try:
-        print("\nNetlify 배포 중...")
-
-        # index.html 하나만 담은 zip 생성 (메모리 내)
-        with open(report_path, "r", encoding="utf-8") as f:
-            html_content = f.read()
-
-        zip_buffer = io.BytesIO()
-        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
-            zf.writestr("index.html", html_content)
-        zip_buffer.seek(0)
-
-        # Netlify Deploy API 호출
-        resp = requests.post(
-            f"https://api.netlify.com/api/v1/sites/{NETLIFY_SITE}/deploys",
-            headers={
-                "Authorization": f"Bearer {NETLIFY_AUTH_TOKEN}",
-                "Content-Type": "application/zip",
-            },
-            data=zip_buffer.getvalue(),
-            timeout=60,
-        )
-
-        if resp.status_code in (200, 201):
-            print("배포 완료! 👉 https://hyundai-review.netlify.app")
-        else:
-            print(f"배포 실패 (HTTP {resp.status_code}): {resp.text[:200]}")
-
-    except Exception as e:
-        print(f"배포 중 오류: {e}")
-
-
-if __name__ == "__main__":
-    main()
