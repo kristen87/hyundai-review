@@ -1388,7 +1388,7 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
 
 </div>
 <div class="footer">
-  현대카드 앱 리뷰 자동 분석 | 수집 소스: 앱스토어 · 플레이스토어 · 네이버 블로그 · 네이버 카페(전체) · Brunch · 디씨인사이드 · 뽐뿌 · 클리앙 · X(트위터) · 유튜브
+  현대카드 앱 리뷰 자동 분석
 </div>
 <script>
 (function(){{
