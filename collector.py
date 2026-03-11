@@ -52,6 +52,9 @@ KEYWORDS = [
     "현대카드 앱 후기",
     "현대카드 앱 추천",
     "현대카드 앱 리뷰",
+    "현대카드 앱 짜증",
+    "현대카드 앱 불편",
+    "현대카드 앱 문제",
 ]
 
 # 현대카드 앱 패키지명 (플레이스토어)
@@ -630,7 +633,7 @@ def collect_clien(start_date, end_date, seen_ids):
         "Referer": "https://www.clien.net/",
     }
     collected = []
-    for keyword in ["현대카드 앱", "현대카드 불만", "현대카드 후기"]:
+    for keyword in ["현대카드 앱", "현대카드 불만", "현대카드 후기", "현대카드 앱 짜증", "현대카드 앱 불편", "현대카드 앱 문제"]:
         try:
             url = f"https://www.clien.net/service/search?q={quote(keyword)}&sort=recency&boardCd=&isRestrict=false"
             resp = requests.get(url, headers=headers, timeout=15)
@@ -764,7 +767,7 @@ def collect_twitter(start_date, end_date, seen_ids):
         "https://nitter.privacydev.net",
         "https://nitter.poast.org",
     ]
-    queries = ["현대카드 앱", "현대카드 불만", "현대카드 오류"]
+    queries = ["현대카드 앱", "현대카드 불만", "현대카드 오류", "현대카드 앱 짜증", "현대카드 앱 불편", "현대카드 앱 문제"]
 
     for query in queries:
         collected_this = False
