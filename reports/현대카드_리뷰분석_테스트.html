@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>현대카드 앱 리뷰 분석 | 2026.02.07 ~ 03.09 주간 리포트</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f0f0f5;color:#1d1d1f;font-size:15px}
+a{color:inherit;text-decoration:none}
+
+/* 헤더 */
+.hdr{background:linear-gradient(135deg,#1c1c1e 0%,#2c2c2e 100%);color:#fff;padding:36px 40px}
+.hdr h1{font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
+.hdr .sub{font-size:13px;opacity:.6}
+.wrap{max-width:1140px;margin:0 auto;padding:28px 20px}
+
+/* 요약 카드 */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.sum-card{background:#fff;border-radius:14px;padding:22px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sum-num{font-size:40px;font-weight:700;margin-bottom:4px;line-height:1}
+.sum-lbl{font-size:12px;color:#8e8e93}
+.c-blue{color:#0a84ff}.c-green{color:#30d158}.c-red{color:#ff453a}.c-gray{color:#636366}
+
+/* 감성 바 */
+.sent-bar{height:10px;border-radius:5px;overflow:hidden;display:flex;margin:14px 0 6px}
+.sent-bar .s-pos{background:#30d158}.sent-bar .s-neg{background:#ff453a}.sent-bar .s-neu{background:#c7c7cc}
+.sent-lbl{display:flex;justify-content:space-between;font-size:12px;color:#8e8e93}
+
+/* 섹션 */
+.sec{background:#fff;border-radius:14px;padding:26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sec h2{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.sec h2 .bar{width:4px;height:20px;border-radius:2px;display:inline-block}
+.bar-red{background:#ff453a}.bar-green{background:#30d158}.bar-blue{background:#0a84ff}.bar-gray{background:#636366}
+
+/* 태그 */
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:100px;font-size:13px;font-weight:600}
+.tag.neg{background:#fff2f0;color:#ff453a}.tag.pos{background:#f0fff4;color:#30d158}
+.tag-cnt{background:rgba(0,0,0,.08);padding:1px 7px;border-radius:100px;font-size:11px;font-weight:400}
+
+/* 소스 바 차트 */
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bar-name{min-width:130px;font-size:13px;color:#3a3a3c}
+.bar-track{flex:1;height:8px;background:#f2f2f7;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#0a84ff,#5ac8fa)}
+.bar-val{min-width:36px;text-align:right;font-size:12px;color:#8e8e93}
+
+/* 리뷰 카드 */
+.rv-grid{display:grid;gap:10px}
+.rv-card{border:1px solid #e5e5ea;border-radius:12px;padding:16px;transition:box-shadow .15s}
+.rv-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.rv-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.rv-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:100px;font-size:12px;font-weight:700}
+.badge.neg{background:#fff2f0;color:#ff453a}.badge.pos{background:#f0fff4;color:#30d158}.badge.neu{background:#f2f2f7;color:#636366}
+.src-badge{padding:3px 10px;border-radius:100px;font-size:11px;background:#f2f2f7;color:#3a3a3c}
+.stars{color:#ffd60a;font-size:13px}
+.rv-date{font-size:12px;color:#8e8e93;white-space:nowrap}
+.rv-title{font-size:14px;font-weight:700;margin-bottom:5px;color:#1d1d1f}
+.rv-body{font-size:13px;color:#3a3a3c;line-height:1.65}
+.rv-link{font-size:12px;color:#0a84ff;margin-top:8px;display:inline-block}
+.rv-link:hover{text-decoration:underline}
+
+.empty{font-size:14px;color:#8e8e93;padding:8px 0}
+.footer{text-align:center;padding:28px;color:#8e8e93;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="max-width:1140px;margin:0 auto">
+    <h1>📱 현대카드 앱 리뷰 분석</h1>
+    <div class="sub">2026.02.07 ~ 03.09 주간 리포트 &nbsp;|&nbsp; 생성: 2026-03-09 10:10</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 요약 카드 -->
+<div class="sum-grid">
+  <div class="sum-card"><div class="sum-num c-blue">0</div><div class="sum-lbl">총 수집 건수</div></div>
+  <div class="sum-card"><div class="sum-num c-green">0</div><div class="sum-lbl">긍정 (0%)</div></div>
+  <div class="sum-card"><div class="sum-num c-red">0</div><div class="sum-lbl">부정 (0%)</div></div>
+  <div class="sum-card"><div class="sum-num c-gray">0</div><div class="sum-lbl">중립 (0%)</div></div>
+  
+</div>
+
+<!-- 감성 분포 -->
+<div class="sec">
+  <h2><span class="bar bar-gray"></span>감성 분포</h2>
+  <div class="sent-bar">
+    <div class="s-pos" style="width:0%"></div>
+    <div class="s-neg" style="width:0%"></div>
+    <div class="s-neu" style="width:0%"></div>
+  </div>
+  <div class="sent-lbl">
+    <span>🟢 긍정 0%</span>
+    <span>🔴 부정 0%</span>
+    <span>⚪ 중립 0%</span>
+  </div>
+</div>
+
+<!-- 주요 이슈 -->
+<div class="sec">
+  <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
+  <div class="tags"><p class="empty">이번 주 집계된 주요 이슈가 없습니다.</p></div>
+  
+</div>
+
+<!-- 소스별 현황 -->
+<div class="sec">
+  <h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
+  <p class="empty">수집된 데이터 없음</p>
+</div>
+
+<!-- 부정 리뷰 -->
+<div class="sec">
+  <h2><span class="bar bar-red"></span>😤 부정 리뷰 (0건)</h2>
+  <div class="rv-grid"><p class="empty">부정 리뷰 없음</p></div>
+</div>
+
+<!-- 긍정 리뷰 -->
+<div class="sec">
+  <h2><span class="bar bar-green"></span>😊 긍정 리뷰 (0건)</h2>
+  <div class="rv-grid"><p class="empty">긍정 리뷰 없음</p></div>
+</div>
+
+</div>
+<div class="footer">
+  현대카드 앱 리뷰 자동 분석 | 수집 소스: 앱스토어 · 플레이스토어 · 네이버 블로그 · 네이버 카페 · Brunch
+</div>
+</body>
+</html>

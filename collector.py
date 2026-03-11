@@ -1226,10 +1226,15 @@ body{{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f
 a{{color:inherit;text-decoration:none}}
 
 /* 헤더 */
-.hdr{{background:linear-gradient(135deg,#1c1c1e 0%,#2c2c2e 100%);color:#fff;padding:36px 40px}}
+.hdr{{background:linear-gradient(135deg,#1c1c1e 0%,#2c2c2e 100%);color:#fff;padding:36px 40px 24px}}
 .hdr h1{{font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px;display:flex;align-items:center;gap:12px}}
 .hdr-icon{{width:44px;height:44px;border-radius:10px;object-fit:cover;flex-shrink:0}}
 .hdr .sub{{font-size:13px;opacity:.6}}
+/* 리포트 선택 드롭다운 */
+.report-nav{{background:rgba(255,255,255,.07);border-top:1px solid rgba(255,255,255,.1);padding:14px 40px;display:flex;align-items:center;gap:12px}}
+.report-nav-label{{font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap}}
+.report-selector{{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 14px;border-radius:8px;font-size:14px;cursor:pointer;flex:1;max-width:320px}}
+.report-selector option{{background:#2c2c2e;color:#fff}}
 .wrap{{max-width:1140px;margin:0 auto;padding:28px 20px}}
 
 /* 요약 카드 */
@@ -1310,8 +1315,14 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
 
 <div class="hdr">
   <div style="max-width:1140px;margin:0 auto">
-    <h1><img src="data:image/png;base64,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" style="width:44px;height:44px;border-radius:10px;flex-shrink:0" alt="현대카드 앱"> 현대카드 앱 리뷰 분석</h1>
+    <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAIAAADytinCAAAOFklEQVR42u3dS4hW9f8H8HN5rqOWpkSmJuUVCUysrAiEFl2wFv9+htEiqFUFgbVIoXCn0cadO4OCLiQU5aZooAuESWFGlmVpXhrL1Lw7z/2c/+LU09M4js9o5aiv10JmhjOP8J3PeZ/P+Z7vOScIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgPxeGoUFA2XP+cobg31MqlWq1WpqmAyo4TdOxY8dee+2148aNq9Vq5XJ51KhRpVLJiDES9Pf31+v1arVar9ePHj168uTJ48ePV6vVzghO0zSO4yRJ2uV9bkl9+q/zt8E0BP+N2bNnz5o1a8qUKXEcT5s27aqrrpo0adL48eMnTpyYz+dLpVI+nzdKjASNRqO/v//EiROnTp3as2fP77//vm/fvsOHD584cWLfvn3bt2/v6+s7efJkFEVpmqZpmiVymqY9PT2VSmVY/5eAFtAX7HQvn8/ffPPNt91228SJE2fMmDFr1qzrrrsuiqLOZrlWq0VRFMexM0RGgjRNW61WFEZxLm7/sNVsJWlSq9V++eWX77//vq+v79ChQ99+++2mTZt+/fXXrI/O5XL1el0HLaBHVhAPqLCenp7+/v4bbrhh0aJFM2bMuOWWW+bOnVsul9sbJEnSaDTCMMzlclEUtctUpTKCYjpJkzTJuuM4jtuF2hmsP/7443fffbd79+6tW7e+9NJLQRBkPbUOWkCPIPl8vtlstuts7ty5S5YsufHGG2+77bbx48efXtmKlZF/8jcsu3bt2rx585YtW9avX79jx47Ro0efPHmyy49S8wL6XxfHcRAEkydPfvrppxcuXDhr1qxisVgoFNqnh2EUdpPUipWLMaAzBw4c+Prrrzdv3vzKK6989913XX6amhfQ/+7MRrFYrNfry5cvv/vuu2+66aaxY8cGQVCtVrPgbk8u6ya4JAM6TdOklYRRWK1WS6XS/v379+7d29vbu2rVqmwJ09AfqOYF9L+iXC5XKpVisThnzpxVq1bNnDlz8uTJcRTHubjVbEVxlFVtuzoFNJd2B50kSTYHHYbhsWPHtm3btnTp0i+++KIzo0/PazUvoP9Fjz322AsvvDBu3Lhyudy5NuM8F4fCxWXQTnnnzp1vvvnm888/H0VRkiRxHLdarTAMO09ABbSA/ofl8/lGo1Eul1euXPnII49cffXVAxbw/7ONCVwUAT1ozZ88eXL79u233357o9EI/pwb7GZ/QUCfYzr39PQcO3ast7d34cKFnXeXDF1qAprLLaDr9XqxWAyCYM+ePffff/8333wTBEF2/6GA7lJsCM4+RnHcLqMkSWq12pYtW+64445oKhI7VYBcuNQtAX" style="width:44px;height:44px;border-radius:10px;flex-shrink:0" alt="현대카드 앱"> 현대카드 앱 리뷰 분석</h1>
     <div class="sub">{week_label} &nbsp;|&nbsp; 생성: {generated}</div>
+  </div>
+  <div class="report-nav">
+    <span class="report-nav-label">📅 리포트 선택</span>
+    <select id="report-selector" class="report-selector">
+      <option>로딩 중...</option>
+    </select>
   </div>
 </div>
 
@@ -1380,6 +1391,27 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
 <div class="footer">
   현대카드 앱 리뷰 자동 분석 | 수집 소스: 앱스토어 · 플레이스토어 · 네이버 블로그 · 네이버 카페(전체) · Brunch · 디씨인사이드 · 뽐뿌 · 클리앙 · X(트위터) · 유튜브
 </div>
+<script>
+(function(){{
+  var sel = document.getElementById('report-selector');
+  fetch('/manifest.json')
+    .then(function(r){{ return r.json(); }})
+    .then(function(list){{
+      sel.innerHTML = '';
+      var cur = window.location.pathname.split('/').pop();
+      if(!cur || cur === 'index.html') cur = list[0] && list[0].file;
+      list.forEach(function(r){{
+        var opt = document.createElement('option');
+        opt.value = r.file === list[0].file ? '/' : '/' + r.file;
+        opt.textContent = r.label;
+        if(r.file === cur) opt.selected = true;
+        sel.appendChild(opt);
+      }});
+      sel.addEventListener('change', function(e){{ window.location.href = e.target.value; }});
+    }})
+    .catch(function(){{ sel.innerHTML = '<option>{week_label}</option>'; }});
+}})();
+</script>
 </body>
 </html>"""
 
@@ -1469,10 +1501,13 @@ def main():
     # HTML 리포트 생성
     print("\nHTML 리포트 생성 중...")
     html = generate_html_report(all_reviews, start_date, end_date)
-    report_name = f"현대카드_리뷰분석_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.html"
+    report_name = f"report_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.html"
     report_path = os.path.join(REPORTS_DIR, report_name)
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(html)
+
+    # manifest.json 업데이트 (리포트 목록)
+    update_manifest(report_name, start_date, end_date)
 
     pos_cnt = sum(1 for r in all_reviews if r["sentiment"] == "긍정")
     neg_cnt = sum(1 for r in all_reviews if r["sentiment"] == "부정")
@@ -1488,6 +1523,25 @@ def main():
         deploy_to_netlify(report_path)
 
     return report_path
+
+
+def update_manifest(report_name, start_date, end_date):
+    """reports/manifest.json에 새 리포트 항목 추가"""
+    manifest_path = os.path.join(REPORTS_DIR, "manifest.json")
+    try:
+        with open(manifest_path, encoding="utf-8") as f:
+            manifest = json.load(f)
+    except Exception:
+        manifest = []
+
+    label = f"{start_date.strftime('%Y.%m.%d')} ~ {end_date.strftime('%m.%d')}"
+    entry = {"file": report_name, "label": label}
+    manifest = [e for e in manifest if e.get("file") != report_name]
+    manifest.insert(0, entry)
+
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+    print(f"manifest.json 업데이트: {len(manifest)}개 리포트")
 
 
 def deploy_to_netlify(report_path):

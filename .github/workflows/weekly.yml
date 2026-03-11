@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: 코드 체크아웃
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Python 설치
         uses: actions/setup-python@v5
@@ -35,10 +37,20 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: python collector.py
 
-      - name: 최신 리포트를 index.html로 복사
+      - name: Git 설정 및 새 리포트 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "리포트 자동 업데이트 $(date '+%Y-%m-%d')"
+          git push
+
+      - name: 배포 폴더 구성
         run: |
           mkdir -p deploy
-          ls reports/*.html | sort | tail -1 | xargs -I{} cp {} deploy/index.html
+          cp reports/manifest.json deploy/
+          cp reports/*.html deploy/
+          cp deploy/$(ls reports/*.html | sort | tail -1 | xargs basename) deploy/index.html
 
       - name: Netlify 배포
         run: |

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>현대카드 앱 리뷰 분석 | 2026.03.03 ~ 03.09 주간 리포트</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f0f0f5;color:#1d1d1f;font-size:15px}
+a{color:inherit;text-decoration:none}
+
+/* 헤더 */
+.hdr{background:linear-gradient(135deg,#1c1c1e 0%,#2c2c2e 100%);color:#fff;padding:36px 40px}
+.hdr h1{font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
+.hdr .sub{font-size:13px;opacity:.6}
+.wrap{max-width:1140px;margin:0 auto;padding:28px 20px}
+
+/* 요약 카드 */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.sum-card{background:#fff;border-radius:14px;padding:22px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sum-num{font-size:40px;font-weight:700;margin-bottom:4px;line-height:1}
+.sum-lbl{font-size:12px;color:#8e8e93}
+.c-blue{color:#0a84ff}.c-green{color:#30d158}.c-red{color:#ff453a}.c-gray{color:#636366}
+
+/* 감성 바 */
+.sent-bar{height:10px;border-radius:5px;overflow:hidden;display:flex;margin:14px 0 6px}
+.sent-bar .s-pos{background:#30d158}.sent-bar .s-neg{background:#ff453a}.sent-bar .s-neu{background:#c7c7cc}
+.sent-lbl{display:flex;justify-content:space-between;font-size:12px;color:#8e8e93}
+
+/* 섹션 */
+.sec{background:#fff;border-radius:14px;padding:26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sec h2{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.sec h2 .bar{width:4px;height:20px;border-radius:2px;display:inline-block}
+.bar-red{background:#ff453a}.bar-green{background:#30d158}.bar-blue{background:#0a84ff}.bar-gray{background:#636366}
+
+/* 태그 */
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:100px;font-size:13px;font-weight:600}
+.tag.neg{background:#fff2f0;color:#ff453a}.tag.pos{background:#f0fff4;color:#30d158}
+.tag-cnt{background:rgba(0,0,0,.08);padding:1px 7px;border-radius:100px;font-size:11px;font-weight:400}
+
+/* 소스 바 차트 */
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bar-name{min-width:130px;font-size:13px;color:#3a3a3c}
+.bar-track{flex:1;height:8px;background:#f2f2f7;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#0a84ff,#5ac8fa)}
+.bar-val{min-width:36px;text-align:right;font-size:12px;color:#8e8e93}
+
+/* 리뷰 카드 */
+.rv-grid{display:grid;gap:10px}
+.rv-card{border:1px solid #e5e5ea;border-radius:12px;padding:16px;transition:box-shadow .15s}
+.rv-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.rv-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.rv-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:100px;font-size:12px;font-weight:700}
+.badge.neg{background:#fff2f0;color:#ff453a}.badge.pos{background:#f0fff4;color:#30d158}.badge.neu{background:#f2f2f7;color:#636366}
+.src-badge{padding:3px 10px;border-radius:100px;font-size:11px;background:#f2f2f7;color:#3a3a3c}
+.stars{color:#ffd60a;font-size:13px}
+.rv-date{font-size:12px;color:#8e8e93;white-space:nowrap}
+.rv-title{font-size:14px;font-weight:700;margin-bottom:5px;color:#1d1d1f}
+.rv-body{font-size:13px;color:#3a3a3c;line-height:1.65}
+.rv-link{font-size:12px;color:#0a84ff;margin-top:8px;display:inline-block}
+.rv-link:hover{text-decoration:underline}
+
+.empty{font-size:14px;color:#8e8e93;padding:8px 0}
+.footer{text-align:center;padding:28px;color:#8e8e93;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="max-width:1140px;margin:0 auto">
+    <h1>📱 현대카드 앱 리뷰 분석</h1>
+    <div class="sub">2026.03.03 ~ 03.09 주간 리포트 &nbsp;|&nbsp; 생성: 2026-03-09 10:15</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 요약 카드 -->
+<div class="sum-grid">
+  <div class="sum-card"><div class="sum-num c-blue">10</div><div class="sum-lbl">총 수집 건수</div></div>
+  <div class="sum-card"><div class="sum-num c-green">4</div><div class="sum-lbl">긍정 (40%)</div></div>
+  <div class="sum-card"><div class="sum-num c-red">6</div><div class="sum-lbl">부정 (60%)</div></div>
+  <div class="sum-card"><div class="sum-num c-gray">0</div><div class="sum-lbl">중립 (0%)</div></div>
+  <div class="sum-card"><div class="sum-num" style="color:#ffd60a">2.7</div><div class="sum-lbl">평균 별점</div></div>
+</div>
+
+<!-- 감성 분포 -->
+<div class="sec">
+  <h2><span class="bar bar-gray"></span>감성 분포</h2>
+  <div class="sent-bar">
+    <div class="s-pos" style="width:40%"></div>
+    <div class="s-neg" style="width:60%"></div>
+    <div class="s-neu" style="width:0%"></div>
+  </div>
+  <div class="sent-lbl">
+    <span>🟢 긍정 40%</span>
+    <span>🔴 부정 60%</span>
+    <span>⚪ 중립 0%</span>
+  </div>
+</div>
+
+<!-- 주요 이슈 -->
+<div class="sec">
+  <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
+  <div class="tags"><div class="tag neg">앱 오류 / 버그 <span class="tag-cnt">8</span></div><div class="tag neg">UI / UX 불편 <span class="tag-cnt">5</span></div><div class="tag neg">고객센터 / 응대 <span class="tag-cnt">3</span></div><div class="tag neg">앱 업데이트 후 문제 <span class="tag-cnt">3</span></div><div class="tag neg">속도 / 로딩 문제 <span class="tag-cnt">2</span></div><div class="tag neg">로그인 / 인증 문제 <span class="tag-cnt">1</span></div><div class="tag neg">혜택 / 포인트 불만 <span class="tag-cnt">1</span></div></div>
+  <div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags"><div class="tag pos">편리한 사용성 <span class="tag-cnt">5</span></div><div class="tag pos">다양한 혜택 <span class="tag-cnt">5</span></div><div class="tag pos">빠른 속도 <span class="tag-cnt">3</span></div><div class="tag pos">깔끔한 디자인 <span class="tag-cnt">3</span></div><div class="tag pos">간편결제 / 보안 <span class="tag-cnt">3</span></div></div></div>
+</div>
+
+<!-- 소스별 현황 -->
+<div class="sec">
+  <h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
+  <div class="bar-row">
+          <div class="bar-name">앱스토어</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <div class="bar-val">3건</div>
+        </div><div class="bar-row">
+          <div class="bar-name">플레이스토어</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <div class="bar-val">3건</div>
+        </div><div class="bar-row">
+          <div class="bar-name">네이버 블로그</div>
+          <div class="bar-track"><div class="bar-fill" style="width:67%"></div></div>
+          <div class="bar-val">2건</div>
+        </div><div class="bar-row">
+          <div class="bar-name">네이버 카페</div>
+          <div class="bar-track"><div class="bar-fill" style="width:33%"></div></div>
+          <div class="bar-val">1건</div>
+        </div><div class="bar-row">
+          <div class="bar-name">Brunch</div>
+          <div class="bar-track"><div class="bar-fill" style="width:33%"></div></div>
+          <div class="bar-val">1건</div>
+        </div>
+</div>
+
+<!-- 부정 리뷰 -->
+<div class="sec">
+  <h2><span class="bar bar-red"></span>😤 부정 리뷰 (6건)</h2>
+  <div class="rv-grid">
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">앱스토어</span>
+              <span class="stars">★☆☆☆☆</span>
+            </div>
+            <span class="rv-date">2026-03-04</span>
+          </div>
+          <div class="rv-title">앱 오류가 너무 많아요</div>
+          <div class="rv-body">최근 업데이트 이후로 앱이 자꾸 튕기고 로그인이 안 됩니다. 버그를 빨리 수정해주세요.</div>
+          
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">플레이스토어</span>
+              <span class="stars">★★☆☆☆</span>
+            </div>
+            <span class="rv-date">2026-03-02</span>
+          </div>
+          <div class="rv-title">로딩이 너무 느려요</div>
+          <div class="rv-body">앱 로딩 속도가 너무 느립니다. 화면 전환할 때마다 오래 걸려서 답답합니다.</div>
+          
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">네이버 블로그</span>
+              
+            </div>
+            <span class="rv-date">2026-03-01</span>
+          </div>
+          <div class="rv-title">현대카드 앱 후기 솔직하게 씁니다</div>
+          <div class="rv-body">현대카드 앱 쓴지 1년 됐는데요, 혜택은 좋은데 앱이 가끔 에러가 나서 불편할 때가 있어요.</div>
+          <a href="https://blog.naver.com/test" target="_blank" class="rv-link">원문 보기 →</a>
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">네이버 카페 (스사사)</span>
+              
+            </div>
+            <span class="rv-date">2026-03-04</span>
+          </div>
+          <div class="rv-title">현대카드 앱 고객센터 연결 안되네요</div>
+          <div class="rv-body">앱에서 고객센터 연결하려고 하는데 계속 오류가 나고 상담 연결이 안 됩니다. 문의 방법이 없어요.</div>
+          <a href="https://cafe.naver.com/test" target="_blank" class="rv-link">원문 보기 →</a>
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">앱스토어</span>
+              <span class="stars">★★☆☆☆</span>
+            </div>
+            <span class="rv-date">2026-03-03</span>
+          </div>
+          <div class="rv-title">UI가 복잡해요</div>
+          <div class="rv-body">최근 업데이트 후 UI가 너무 복잡해졌어요. 찾기 힘든 기능들이 생겨서 불편합니다.</div>
+          
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge neg">부정</span>
+              <span class="src-badge">플레이스토어</span>
+              <span class="stars">★☆☆☆☆</span>
+            </div>
+            <span class="rv-date">2026-03-06</span>
+          </div>
+          <div class="rv-title">강제 종료 문제</div>
+          <div class="rv-body">앱이 계속 강제 종료됩니다. 결제하려고 하면 다운되고 먹통이 돼요. 진짜 최악이에요.</div>
+          
+        </div></div>
+</div>
+
+<!-- 긍정 리뷰 -->
+<div class="sec">
+  <h2><span class="bar bar-green"></span>😊 긍정 리뷰 (4건)</h2>
+  <div class="rv-grid">
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge pos">긍정</span>
+              <span class="src-badge">앱스토어</span>
+              <span class="stars">★★★★★</span>
+            </div>
+            <span class="rv-date">2026-03-05</span>
+          </div>
+          <div class="rv-title">정말 편리해요</div>
+          <div class="rv-body">현대카드 앱 진짜 편리하고 빠르게 결제돼서 너무 좋아요. 혜택도 쏠쏠하고 추천합니다.</div>
+          
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge pos">긍정</span>
+              <span class="src-badge">플레이스토어</span>
+              <span class="stars">★★★★★</span>
+            </div>
+            <span class="rv-date">2026-03-03</span>
+          </div>
+          <div class="rv-title">간편결제 최고</div>
+          <div class="rv-body">간편결제 기능이 정말 빠르고 안전해서 만족스럽습니다. 디자인도 깔끔하고 좋네요.</div>
+          
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge pos">긍정</span>
+              <span class="src-badge">네이버 블로그</span>
+              
+            </div>
+            <span class="rv-date">2026-03-06</span>
+          </div>
+          <div class="rv-title">현대카드 앱 진짜 좋네요</div>
+          <div class="rv-body">포인트 적립도 잘 되고 간편결제도 빠르고 편리해요. 직관적인 UI가 마음에 듭니다.</div>
+          <a href="https://blog.naver.com/test2" target="_blank" class="rv-link">원문 보기 →</a>
+        </div>
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-meta">
+              <span class="badge pos">긍정</span>
+              <span class="src-badge">Brunch</span>
+              
+            </div>
+            <span class="rv-date">2026-03-05</span>
+          </div>
+          <div class="rv-title">현대카드 앱 사용기 - 혜택 총정리</div>
+          <div class="rv-body">현대카드 앱의 다양한 혜택과 캐시백 기능을 써봤는데 정말 편리하고 만족스럽습니다.</div>
+          <a href="https://brunch.co.kr/@test" target="_blank" class="rv-link">원문 보기 →</a>
+        </div></div>
+</div>
+
+</div>
+<div class="footer">
+  현대카드 앱 리뷰 자동 분석 | 수집 소스: 앱스토어 · 플레이스토어 · 네이버 블로그 · 네이버 카페 · Brunch
+</div>
+</body>
+</html>
