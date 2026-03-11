@@ -1345,8 +1345,8 @@ details.sec-collapsible[open] .sec-arrow{{transform:rotate(180deg)}}
 details.sec-collapsible .sec-body{{margin-top:18px}}
 .sec h2 .bar{{width:4px;height:20px;border-radius:2px;display:inline-block}}
 /* 클러스터 인사이트 */
-.c-insight{{padding:8px 18px 14px}}
-.c-quote{{font-size:13px;color:#636366;font-style:italic;padding:0 12px;line-height:1.5;text-align:left}}
+.c-insight{{padding:16px 18px 14px}}
+.c-quote{{font-size:13px;color:#636366;font-style:italic;padding:0 12px;margin-bottom:16px;line-height:1.5;text-align:left}}
 .c-action{{font-size:12px;font-weight:600;line-height:1.5;color:#000;text-align:left}}
 /* 인사이트 섹션 */
 .insight-wrap{{display:flex;flex-direction:column;gap:24px}}
