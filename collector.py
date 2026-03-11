@@ -929,34 +929,46 @@ def collect_youtube(start_date, end_date, seen_ids):
 TOPIC_CLUSTERS = {
     "긍정": [
         {"id":"pos_design",   "keywords":["디자인","ui","ux","깔끔","직관","인터페이스","세련","미니멀","예쁘","심플"],
-         "summary":"깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요"},
+         "summary":"깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요",
+         "action":"타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용"},
         {"id":"pos_payment",  "keywords":["결제","앱카드","애플페이","페이","간편결제","실물카드","nfc"],
-         "summary":"간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요"},
+         "summary":"간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요",
+         "action":"애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장"},
         {"id":"pos_feature",  "keywords":["혜택","소비잔소리","소비케어","추천","ai","잠금","lock","기능"],
-         "summary":"다양한 혜택과 소비 관리 기능이 유용하다는 평가예요"},
+         "summary":"다양한 혜택과 소비 관리 기능이 유용하다는 평가예요",
+         "action":"Lock&Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고"},
         {"id":"pos_stable",   "keywords":["빠르","안정","원활","잘됩","잘 됩","잘돼","문제없","불편없"],
-         "summary":"앱이 빠르고 안정적으로 작동한다는 긍정적인 반응이에요"},
+         "summary":"앱이 빠르고 안정적으로 작동한다는 긍정적인 반응이에요",
+         "action":"현재 성능 기준 유지 및 개선 작업 중 성능 저하 모니터링 필수"},
         {"id":"pos_easy",     "keywords":["편리","편하","간편","쉽게","쉬운","사용하기","쓰기"],
-         "summary":"전반적인 사용 편의성이 타 카드사 앱보다 뛰어나다는 의견이에요"},
+         "summary":"전반적인 사용 편의성이 타 카드사 앱보다 뛰어나다는 의견이에요",
+         "action":"직관적 사용성 원칙을 신규 기능 설계에도 일관되게 적용"},
         {"id":"pos_satisfy",  "keywords":["만족","추천","최고","훌륭","완벽","강추","좋아"],
-         "summary":"전반적인 앱 사용 경험에 높은 만족감을 표현하는 의견이에요"},
+         "summary":"전반적인 앱 사용 경험에 높은 만족감을 표현하는 의견이에요",
+         "action":"높은 만족도를 리텐션 지표와 연계해 모니터링 지속"},
     ],
     "부정": [
         {"id":"neg_crash",    "keywords":["먹통","오류","에러","버그","안됩","안되","실행 안","안 됩","튕","충돌","다운","작동"],
-         "summary":"앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요"},
+         "summary":"앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요",
+         "action":"앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보"},
         {"id":"neg_login",    "keywords":["로그인","인증","생체","지문","비밀번호"],
-         "summary":"로그인 및 생체인증 오류로 불편을 겪는 사용자가 많아요"},
+         "summary":"로그인 및 생체인증 오류로 불편을 겪는 사용자가 많아요",
+         "action":"생체인증 실패 패턴 파악 및 인증 플로우 간소화 검토"},
         {"id":"neg_server",   "keywords":["서버","대기","느리","느림","로딩","먹힘"],
          "phrases":["서버 접속","서버 연결","접속 불가","대기 중","페이지 로딩","앱 로딩"],
          "excludes":["고객센터","상담","콜센터"],
-         "summary":"서버 접속 지연과 로딩 문제가 자주 발생하고 있어요"},
+         "summary":"서버 접속 지연과 로딩 문제가 자주 발생하고 있어요",
+         "action":"서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선"},
         {"id":"neg_ui",       "keywords":["불편","광고","스크롤","개악","기능 없","인터페이스"],
-         "summary":"앱의 UI와 특정 기능에 대한 불편함이 지적되고 있어요"},
+         "summary":"앱의 UI와 특정 기능에 대한 불편함이 지적되고 있어요",
+         "action":"광고성 배너 노출 방식 재검토 및 핵심 기능 접근성 개선"},
         {"id":"neg_cs",       "keywords":["고객센터","상담","콜센터","전화","문의","고객지원"],
          "phrases":["고객센터 연결","상담 연결","전화 연결","연락이 안","연결이 안","고객 서비스","고객센터 전화"],
-         "summary":"고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요"},
+         "summary":"고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요",
+         "action":"인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선"},
         {"id":"neg_notif",    "keywords":["알림","문자","푸시","알림 안","알림이"],
-         "summary":"결제 알림과 푸시 알림이 제때 오지 않는 문제가 있어요"},
+         "summary":"결제 알림과 푸시 알림이 제때 오지 않는 문제가 있어요",
+         "action":"알림 딜레이 원인 파악(서버/OS 레벨) 및 푸시 발송 안정성 개선"},
     ],
     "중립": [
         {"id":"neu_inquiry",  "keywords":["방법","어떻게","문의","질문","궁금","알려"],
@@ -967,6 +979,63 @@ TOPIC_CLUSTERS = {
          "summary":"앱 업데이트나 기능 변경에 대한 의견이에요"},
     ],
 }
+
+def make_insight_section(negative, positive):
+    """개선 필요 / 유지 강화 인사이트 섹션 HTML 생성"""
+    def get_top_clusters(reviews, sentiment):
+        clusters_def = TOPIC_CLUSTERS.get(sentiment, [])
+        assignments = {c["id"]: [] for c in clusters_def}
+        for review in reviews:
+            text = (review.get("title", "") + " " + review.get("content", "")).lower()
+            best_id, best_score = None, 0
+            for c in clusters_def:
+                score = sum(1 for kw in c["keywords"] if kw in text)
+                score += sum(3 for ph in c.get("phrases", []) if ph in text)
+                score -= sum(2 for ex in c.get("excludes", []) if ex in text)
+                if score > best_score:
+                    best_score, best_id = score, c["id"]
+            if best_score > 0 and best_id:
+                assignments[best_id].append(review)
+        valid = sorted(
+            [(cid, revs) for cid, revs in assignments.items() if len(revs) >= 2],
+            key=lambda x: -len(x[1])
+        )[:4]
+        return [(next(c for c in clusters_def if c["id"]==cid), revs) for cid, revs in valid]
+
+    def render_cards(clusters, card_cls):
+        cards = []
+        for c, revs in clusters:
+            rep = revs[0]
+            raw = (rep.get("content") or rep.get("title") or "").strip()
+            # 첫 문장 또는 50자
+            first_sent = raw.split(".")[0].split("!")[0].split("?")[0].strip()
+            quote = (first_sent[:55] + "…") if len(first_sent) > 55 else first_sent
+            action = c.get("action", "")
+            cnt = len(revs)
+            cards.append(f"""<div class="insight-card {card_cls}">
+  <div class="ic-cnt">{cnt}건</div>
+  <div class="ic-summary">{c["summary"]}</div>
+  <div class="ic-quote">"{quote}"</div>
+  <div class="ic-action">→ {action}</div>
+</div>""")
+        return "\n".join(cards)
+
+    neg_clusters = get_top_clusters(negative, "부정")
+    pos_clusters = get_top_clusters(positive, "긍정")
+    neg_cards = render_cards(neg_clusters, "ic-neg")
+    pos_cards = render_cards(pos_clusters, "ic-pos")
+
+    return f"""<div class="insight-wrap">
+  <div class="insight-group">
+    <div class="insight-label ic-label-neg">🔧 개선 필요</div>
+    <div class="insight-grid">{neg_cards}</div>
+  </div>
+  <div class="insight-group">
+    <div class="insight-label ic-label-pos">⭐ 유지 강화</div>
+    <div class="insight-grid">{pos_cards}</div>
+  </div>
+</div>"""
+
 
 def make_cluster_html(reviews, sentiment, badge_type, review_card_fn):
     """리뷰를 주제별로 클러스터링해 아코디언 HTML 생성"""
@@ -1208,6 +1277,7 @@ def generate_html_report(all_reviews, start_date, end_date):
     )
 
     neg_cluster_html = make_cluster_html(negative, "부정", "neg", review_card)
+    insight_html = make_insight_section(negative, positive)
     pos_cluster_html = make_cluster_html(positive, "긍정", "pos", review_card)
     neu_cluster_html = make_cluster_html(neutral,  "중립", "neu", review_card)
 
@@ -1262,6 +1332,23 @@ a{{color:inherit;text-decoration:none}}
 details.sec-collapsible[open] .sec-arrow{{transform:rotate(180deg)}}
 details.sec-collapsible .sec-body{{margin-top:18px}}
 .sec h2 .bar{{width:4px;height:20px;border-radius:2px;display:inline-block}}
+/* 인사이트 섹션 */
+.insight-wrap{{display:flex;flex-direction:column;gap:24px}}
+.insight-label{{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.4px;padding:4px 12px;border-radius:20px;margin-bottom:12px}}
+.ic-label-neg{{background:#fff1f0;color:#ff3b30}}
+.ic-label-pos{{background:#f0fff4;color:#30d158}}
+.insight-grid{{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(max-width:640px){{.insight-grid{{grid-template-columns:1fr}}}}
+.insight-card{{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid #e5e5ea}}
+.ic-neg{{border-left-color:#ff3b30}}
+.ic-pos{{border-left-color:#30d158}}
+.ic-cnt{{font-size:22px;font-weight:700;margin-bottom:4px}}
+.ic-neg .ic-cnt{{color:#ff3b30}}
+.ic-pos .ic-cnt{{color:#30d158}}
+.ic-summary{{font-size:13px;font-weight:600;color:#1d1d1f;margin-bottom:8px;line-height:1.5}}
+.ic-quote{{font-size:12px;color:#636366;font-style:italic;margin-bottom:10px;padding:8px 10px;background:#f5f5f7;border-radius:6px;line-height:1.5}}
+.ic-action{{font-size:12px;font-weight:600;color:#0071e3;line-height:1.5}}
+.ic-pos .ic-action{{color:#1e8a3e}}
 .bar-red{{background:#ff453a}}.bar-green{{background:#30d158}}.bar-blue{{background:#0a84ff}}.bar-gray{{background:#636366}}
 
 /* 태그 */
@@ -1355,6 +1442,12 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
   <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
   <div class="tags">{issue_tags}</div>
   {f'<div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags">{pos_tags}</div></div>' if pos_tags else ""}
+</div>
+
+<!-- 개선 기회 포인트 -->
+<div class="sec">
+  <h2><span class="bar" style="background:#6e6e73"></span>💡 개선 기회 포인트</h2>
+  {insight_html}
 </div>
 
 <!-- 소스별 현황 -->

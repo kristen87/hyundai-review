@@ -93,6 +93,24 @@ details.sec-collapsible .sec-body{margin-top:18px}
 details[open]>.cluster-toggle::after{content:" ▴"}
 .cluster-cards{padding:12px;background:#fff}
 .footer{text-align:center;padding:28px;color:#8e8e93;font-size:12px}
+
+/* 인사이트 섹션 */
+.insight-wrap{display:flex;flex-direction:column;gap:24px}
+.insight-label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.4px;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.ic-label-neg{background:#fff1f0;color:#ff3b30}
+.ic-label-pos{background:#f0fff4;color:#30d158}
+.insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:640px){.insight-grid{grid-template-columns:1fr}}
+.insight-card{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid #e5e5ea}
+.ic-neg{border-left-color:#ff3b30}
+.ic-pos{border-left-color:#30d158}
+.ic-cnt{font-size:22px;font-weight:700;margin-bottom:4px}
+.ic-neg .ic-cnt{color:#ff3b30}
+.ic-pos .ic-cnt{color:#30d158}
+.ic-summary{font-size:13px;font-weight:600;color:#1d1d1f;margin-bottom:8px;line-height:1.5}
+.ic-quote{font-size:12px;color:#636366;font-style:italic;margin-bottom:10px;padding:8px 10px;background:#f5f5f7;border-radius:6px;line-height:1.5}
+.ic-action{font-size:12px;font-weight:600;color:#0071e3;line-height:1.5}
+.ic-pos .ic-action{color:#1e8a3e}
 </style>
 </head>
 <body>
@@ -139,6 +157,55 @@ details[open]>.cluster-toggle::after{content:" ▴"}
   <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
   <div class="tags"><div class="tag neg">앱 오류 / 버그 <span class="tag-cnt">29</span></div><div class="tag neg">UI / UX 불편 <span class="tag-cnt">18</span></div><div class="tag neg">고객센터 / 응대 <span class="tag-cnt">14</span></div><div class="tag neg">로그인 / 인증 문제 <span class="tag-cnt">8</span></div><div class="tag neg">속도 / 로딩 문제 <span class="tag-cnt">8</span></div><div class="tag neg">앱 업데이트 후 문제 <span class="tag-cnt">8</span></div></div>
   <div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags"><div class="tag pos">편리한 사용성 <span class="tag-cnt">14</span></div><div class="tag pos">깔끔한 디자인 <span class="tag-cnt">12</span></div><div class="tag pos">다양한 혜택 <span class="tag-cnt">11</span></div><div class="tag pos">간편결제 / 보안 <span class="tag-cnt">11</span></div><div class="tag pos">빠른 속도 <span class="tag-cnt">3</span></div></div></div>
+</div>
+
+<!-- 개선 기회 포인트 -->
+<div class="sec">
+  <h2><span class="bar" style="background:#6e6e73"></span>💡 개선 기회 포인트</h2>
+  <div class="insight-wrap">
+    <div class="insight-group">
+      <div class="insight-label ic-label-neg">🔧 개선 필요</div>
+      <div class="insight-grid"><div class="insight-card ic-neg">
+  <div class="ic-cnt">17건</div>
+  <div class="ic-summary">앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요</div>
+  <div class="ic-quote">"며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요"</div>
+  <div class="ic-action">→ 앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보</div>
+</div>
+<div class="insight-card ic-neg">
+  <div class="ic-cnt">6건</div>
+  <div class="ic-summary">고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요</div>
+  <div class="ic-quote">"앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다"</div>
+  <div class="ic-action">→ 인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선</div>
+</div>
+<div class="insight-card ic-neg">
+  <div class="ic-cnt">4건</div>
+  <div class="ic-summary">서버 접속 지연과 로딩 문제가 자주 발생하고 있어요</div>
+  <div class="ic-quote">"앱 켜면 로딩이 오래 걸려요"</div>
+  <div class="ic-action">→ 서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선</div>
+</div></div>
+    </div>
+    <div class="insight-group">
+      <div class="insight-label ic-label-pos">⭐ 유지 강화</div>
+      <div class="insight-grid"><div class="insight-card ic-pos">
+  <div class="ic-cnt">9건</div>
+  <div class="ic-summary">다양한 혜택과 소비 관리 기능이 유용하다는 평가예요</div>
+  <div class="ic-quote">"M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요"</div>
+  <div class="ic-action">→ Lock&Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고</div>
+</div>
+<div class="insight-card ic-pos">
+  <div class="ic-cnt">8건</div>
+  <div class="ic-summary">깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요</div>
+  <div class="ic-quote">"현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다"</div>
+  <div class="ic-action">→ 타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용</div>
+</div>
+<div class="insight-card ic-pos">
+  <div class="ic-cnt">8건</div>
+  <div class="ic-summary">간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요</div>
+  <div class="ic-quote">"현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다"</div>
+  <div class="ic-action">→ 애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장</div>
+</div></div>
+    </div>
+  </div>
 </div>
 
 <!-- 소스별 현황 -->
