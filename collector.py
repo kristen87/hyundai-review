@@ -1607,6 +1607,11 @@ def main():
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(html)
 
+    # 루트 index.html 업데이트 (netlify deploy --dir=. 시 사용)
+    index_path = os.path.join(os.path.dirname(REPORTS_DIR), "index.html")
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+
     # manifest.json 업데이트 (리포트 목록)
     update_manifest(report_name, start_date, end_date)
 
