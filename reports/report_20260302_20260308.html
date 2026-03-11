@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>현대카드 앱 리뷰 분석 | 2026.03.02 ~ 03.08 주간 리포트</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -111,1026 +112,915 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 .ic-quote{font-size:12px;color:#636366;font-style:italic;margin-bottom:10px;padding:8px 10px;background:#f5f5f7;border-radius:6px;line-height:1.5}
 .ic-action{font-size:12px;font-weight:600;color:#0071e3;line-height:1.5}
 .ic-pos .ic-action{color:#1e8a3e}
+
+/* 클러스터 인사이트 */
+.c-insight{padding:0 18px 14px}
+.c-quote{font-size:13px;color:#636366;font-style:italic;padding:8px 12px;background:#f5f5f7;border-radius:6px;margin-bottom:8px;line-height:1.5}
+.c-action{font-size:12px;font-weight:600;line-height:1.5}
 </style>
 </head>
 <body>
-
 <div class="hdr">
-  <div style="max-width:1140px;margin:0 auto">
-    <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAADFUlEQVR4nO3bvUorQRjG8Wdmd01qba0CaQQLa/EWbK1sLGwFsckNeAkBKy20ELwM78FOjmJnoUHIByH7niLMHD+Kc3DmOdnI84MFk8Bm5+9kNtmoA2AQGr/oA/jpFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJisZO7cOcfcfTZmvL9Bzx7Yew/vPeq6Rl3XuXdPwTxmh4z/QlAUBWazWbxdVRWqqoKZNW42h2Maj8cfon4eQ6psgcMM6HQ62N/fx87ODtbX19Fut+fP0Ky+MfDb2xseHx9xe3uL6+tr3N/fw3sPM8u2dFjK5pyzoigMgB0fH9tgMLBlNRgMrNfrGQDz3ptzLqkNAEueweEldXp6il6vF2fGcDTEw6+HrC83hpWVFXQ6HZTln9PRxcUFDg4O4qvSEmfyt387Yebu7e2ZmdlkMjEzs36/b91uNz7e5K2qKtvc3LSzs7MPYzg5OTEAVpZl6nOkLQ+tVsvu7u6srmszMzs6OvrweNgWHfJftsPDQ6vr2mazmT0/P9vq6qoB8+XivwcOs3N7ezuuYTc3N3FWhDWs6YGdc+a9t6qqDIBdXV3F8ezu7hqQNou//UkuvO3a2tqK952fn8czcFi7LOPZmOH9sXrvcXl5Ge/f2NgAkPaBKfmj8traWvx5OBxmOSksQgg9Ho8BzKO22+342HdlvRbh/fJf2ng/hhB2oTP4vWWcuZ/lHsPyT7mGU2AyBSZLvlwZzr4/SRhPjvU4OXBZlvHM+1PeRYRxFEWRvL/kwC8vL3h6egIwfx+87EajURzP6+vr/M6EiZx8NS1cVAeAyWTS+Ktnf1MUBVqtFgBgOp1iOp0m7S/rNxryVZZF0znXuK+EUuQcj2Yw2fKf9htOgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgcl+A9zy9sM62CQ5AAAAAElFTkSuQmCC" style="width:44px;height:44px;border-radius:10px;flex-shrink:0" alt="현대카드 앱"> 현대카드 앱 리뷰 분석</h1>
-    <div class="report-nav">
-      <span class="report-nav-label">리포트 선택</span>
-    <select id="report-selector" class="report-selector">
-      <option>로딩 중...</option>
-      </select>
-    </div>
-  </div>
+<div style="max-width:1140px;margin:0 auto">
+<h1><img alt="현대카드 앱" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAADFUlEQVR4nO3bvUorQRjG8Wdmd01qba0CaQQLa/EWbK1sLGwFsckNeAkBKy20ELwM78FOjmJnoUHIByH7niLMHD+Kc3DmOdnI84MFk8Bm5+9kNtmoA2AQGr/oA/jpFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJisZO7cOcfcfTZmvL9Bzx7Yew/vPeq6Rl3XuXdPwTxmh4z/QlAUBWazWbxdVRWqqoKZNW42h2Maj8cfon4eQ6psgcMM6HQ62N/fx87ODtbX19Fut+fP0Ky+MfDb2xseHx9xe3uL6+tr3N/fw3sPM8u2dFjK5pyzoigMgB0fH9tgMLBlNRgMrNfrGQDz3ptzLqkNAEueweEldXp6il6vF2fGcDTEw6+HrC83hpWVFXQ6HZTln9PRxcUFDg4O4qvSEmfyt387Yebu7e2ZmdlkMjEzs36/b91uNz7e5K2qKtvc3LSzs7MPYzg5OTEAVpZl6nOkLQ+tVsvu7u6srmszMzs6OvrweNgWHfJftsPDQ6vr2mazmT0/P9vq6qoB8+XivwcOs3N7ezuuYTc3N3FWhDWs6YGdc+a9t6qqDIBdXV3F8ezu7hqQNou//UkuvO3a2tqK952fn8czcFi7LOPZmOH9sXrvcXl5Ge/f2NgAkPaBKfmj8traWvx5OBxmOSksQgg9Ho8BzKO22+342HdlvRbh/fJf2ng/hhB2oTP4vWWcuZ/lHsPyT7mGU2AyBSZLvlwZzr4/SRhPjvU4OXBZlvHM+1PeRYRxFEWRvL/kwC8vL3h6egIwfx+87EajURzP6+vr/M6EiZx8NS1cVAeAyWTS+Ktnf1MUBVqtFgBgOp1iOp0m7S/rNxryVZZF0znXuK+EUuQcj2Yw2fKf9htOgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgcl+A9zy9sM62CQ5AAAAAElFTkSuQmCC" style="width:44px;height:44px;border-radius:10px;flex-shrink:0"/> 현대카드 앱 리뷰 분석</h1>
+<div class="report-nav">
+<span class="report-nav-label">리포트 선택</span>
+<select class="report-selector" id="report-selector">
+<option>로딩 중...</option>
+</select>
 </div>
-
+</div>
+</div>
 <div class="wrap">
-
 <!-- 요약 카드 -->
 <div class="sum-total">총 <strong>59</strong>건 수집</div>
 <div class="sum-grid">
-  <a class="sum-card" href="#sec-pos"><div class="sum-num c-green">26</div><div class="sum-lbl">😊 긍정 (44%)</div></a>
-  <a class="sum-card" href="#sec-neg"><div class="sum-num c-red">32</div><div class="sum-lbl">😤 부정 (54%)</div></a>
-  <a class="sum-card" href="#sec-neu"><div class="sum-num c-gray">1</div><div class="sum-lbl">😐 중립 (2%)</div></a>
+<a class="sum-card" href="#sec-pos"><div class="sum-num c-green">26</div><div class="sum-lbl">😊 긍정 (44%)</div></a>
+<a class="sum-card" href="#sec-neg"><div class="sum-num c-red">32</div><div class="sum-lbl">😤 부정 (54%)</div></a>
+<a class="sum-card" href="#sec-neu"><div class="sum-num c-gray">1</div><div class="sum-lbl">😐 중립 (2%)</div></a>
 </div>
-
 <!-- 감성 분포 -->
 <div class="sec">
-  <h2><span class="bar bar-gray"></span>감성 분포</h2>
-  <div class="sent-bar">
-    <div class="s-pos" style="width:44%"></div>
-    <div class="s-neg" style="width:54%"></div>
-    <div class="s-neu" style="width:2%"></div>
-  </div>
-  <div class="sent-lbl">
-    <span>🟢 긍정 44%</span>
-    <span>🔴 부정 54%</span>
-    <span>⚪ 중립 2%</span>
-  </div>
+<h2><span class="bar bar-gray"></span>감성 분포</h2>
+<div class="sent-bar">
+<div class="s-pos" style="width:44%"></div>
+<div class="s-neg" style="width:54%"></div>
+<div class="s-neu" style="width:2%"></div>
 </div>
-
+<div class="sent-lbl">
+<span>🟢 긍정 44%</span>
+<span>🔴 부정 54%</span>
+<span>⚪ 중립 2%</span>
+</div>
+</div>
 <!-- 주요 이슈 -->
 <div class="sec">
-  <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
-  <div class="tags"><div class="tag neg">앱 오류 / 버그 <span class="tag-cnt">29</span></div><div class="tag neg">UI / UX 불편 <span class="tag-cnt">18</span></div><div class="tag neg">고객센터 / 응대 <span class="tag-cnt">14</span></div><div class="tag neg">로그인 / 인증 문제 <span class="tag-cnt">8</span></div><div class="tag neg">속도 / 로딩 문제 <span class="tag-cnt">8</span></div><div class="tag neg">앱 업데이트 후 문제 <span class="tag-cnt">8</span></div></div>
-  <div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags"><div class="tag pos">편리한 사용성 <span class="tag-cnt">14</span></div><div class="tag pos">깔끔한 디자인 <span class="tag-cnt">12</span></div><div class="tag pos">다양한 혜택 <span class="tag-cnt">11</span></div><div class="tag pos">간편결제 / 보안 <span class="tag-cnt">11</span></div><div class="tag pos">빠른 속도 <span class="tag-cnt">3</span></div></div></div>
+<h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
+<div class="tags"><div class="tag neg">앱 오류 / 버그 <span class="tag-cnt">29</span></div><div class="tag neg">UI / UX 불편 <span class="tag-cnt">18</span></div><div class="tag neg">고객센터 / 응대 <span class="tag-cnt">14</span></div><div class="tag neg">로그인 / 인증 문제 <span class="tag-cnt">8</span></div><div class="tag neg">속도 / 로딩 문제 <span class="tag-cnt">8</span></div><div class="tag neg">앱 업데이트 후 문제 <span class="tag-cnt">8</span></div></div>
+<div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags"><div class="tag pos">편리한 사용성 <span class="tag-cnt">14</span></div><div class="tag pos">깔끔한 디자인 <span class="tag-cnt">12</span></div><div class="tag pos">다양한 혜택 <span class="tag-cnt">11</span></div><div class="tag pos">간편결제 / 보안 <span class="tag-cnt">11</span></div><div class="tag pos">빠른 속도 <span class="tag-cnt">3</span></div></div></div>
 </div>
-
 <!-- 개선 기회 포인트 -->
-<div class="sec">
-  <h2><span class="bar" style="background:#6e6e73"></span>💡 개선 기회 포인트</h2>
-  <div class="insight-wrap">
-    <div class="insight-group">
-      <div class="insight-label ic-label-neg">🔧 개선 필요</div>
-      <div class="insight-grid"><div class="insight-card ic-neg">
-  <div class="ic-cnt">17건</div>
-  <div class="ic-summary">앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요</div>
-  <div class="ic-quote">"며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요"</div>
-  <div class="ic-action">→ 앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보</div>
-</div>
-<div class="insight-card ic-neg">
-  <div class="ic-cnt">6건</div>
-  <div class="ic-summary">고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요</div>
-  <div class="ic-quote">"앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다"</div>
-  <div class="ic-action">→ 인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선</div>
-</div>
-<div class="insight-card ic-neg">
-  <div class="ic-cnt">4건</div>
-  <div class="ic-summary">서버 접속 지연과 로딩 문제가 자주 발생하고 있어요</div>
-  <div class="ic-quote">"앱 켜면 로딩이 오래 걸려요"</div>
-  <div class="ic-action">→ 서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선</div>
-</div></div>
-    </div>
-    <div class="insight-group">
-      <div class="insight-label ic-label-pos">⭐ 유지 강화</div>
-      <div class="insight-grid"><div class="insight-card ic-pos">
-  <div class="ic-cnt">9건</div>
-  <div class="ic-summary">다양한 혜택과 소비 관리 기능이 유용하다는 평가예요</div>
-  <div class="ic-quote">"M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요"</div>
-  <div class="ic-action">→ Lock&Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고</div>
-</div>
-<div class="insight-card ic-pos">
-  <div class="ic-cnt">8건</div>
-  <div class="ic-summary">깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요</div>
-  <div class="ic-quote">"현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다"</div>
-  <div class="ic-action">→ 타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용</div>
-</div>
-<div class="insight-card ic-pos">
-  <div class="ic-cnt">8건</div>
-  <div class="ic-summary">간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요</div>
-  <div class="ic-quote">"현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다"</div>
-  <div class="ic-action">→ 애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장</div>
-</div></div>
-    </div>
-  </div>
-</div>
 
 <!-- 소스별 현황 -->
 <div class="sec">
-  <details class="sec-collapsible">
-    <summary class="sec-toggle">
-      <h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
-      <span class="sec-arrow">▼</span>
-    </summary>
-    <div class="sec-body"><div class="bar-row">
-          <div class="bar-name">앱스토어</div>
-          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
-          <div class="bar-val">10건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">플레이스토어</div>
-          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
-          <div class="bar-val">10건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">네이버 카페</div>
-          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
-          <div class="bar-val">6건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">X(트위터)</div>
-          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
-          <div class="bar-val">6건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">네이버 블로그</div>
-          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
-          <div class="bar-val">5건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">디씨인사이드</div>
-          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
-          <div class="bar-val">5건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">클리앙</div>
-          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
-          <div class="bar-val">5건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">Brunch</div>
-          <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
-          <div class="bar-val">4건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">뽐뿌</div>
-          <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
-          <div class="bar-val">4건</div>
-        </div><div class="bar-row">
-          <div class="bar-name">유튜브</div>
-          <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
-          <div class="bar-val">4건</div>
-        </div></div>
-  </details>
+<details class="sec-collapsible">
+<summary class="sec-toggle">
+<h2><span class="bar bar-blue"></span>📊 소스별 수집 현황</h2>
+<span class="sec-arrow">▼</span>
+</summary>
+<div class="sec-body"><div class="bar-row">
+<div class="bar-name">앱스토어</div>
+<div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+<div class="bar-val">10건</div>
+</div><div class="bar-row">
+<div class="bar-name">플레이스토어</div>
+<div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+<div class="bar-val">10건</div>
+</div><div class="bar-row">
+<div class="bar-name">네이버 카페</div>
+<div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+<div class="bar-val">6건</div>
+</div><div class="bar-row">
+<div class="bar-name">X(트위터)</div>
+<div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+<div class="bar-val">6건</div>
+</div><div class="bar-row">
+<div class="bar-name">네이버 블로그</div>
+<div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+<div class="bar-val">5건</div>
+</div><div class="bar-row">
+<div class="bar-name">디씨인사이드</div>
+<div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+<div class="bar-val">5건</div>
+</div><div class="bar-row">
+<div class="bar-name">클리앙</div>
+<div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+<div class="bar-val">5건</div>
+</div><div class="bar-row">
+<div class="bar-name">Brunch</div>
+<div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+<div class="bar-val">4건</div>
+</div><div class="bar-row">
+<div class="bar-name">뽐뿌</div>
+<div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+<div class="bar-val">4건</div>
+</div><div class="bar-row">
+<div class="bar-name">유튜브</div>
+<div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+<div class="bar-val">4건</div>
+</div></div>
+</details>
 </div>
-
 <!-- 부정 리뷰 -->
 <div class="sec" id="sec-neg">
-  <h2><span class="bar bar-red"></span>😤 부정 리뷰 (32건)</h2>
-  <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">1</span>
-    <span class="cluster-txt">앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요 <span class="cluster-cnt">(17건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">앱 먹통 문제 해결해주세요</div>
-          <div class="rv-body">며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요. 삭제 재설치해도 똑같습니다. 에러 공지도 없고 진짜 최악입니다.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">강제 종료 반복</div>
-          <div class="rv-body">결제하려고 할 때 앱이 계속 강제 종료됩니다. 다운되고 먹통이 되는 게 한두 번이 아니에요. 이 정도면 진짜 못 쓰겠습니다. 다른 카드사 앱 쓰는 게 나을 것 같아요.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-02</span>
-          </div>
-          <div class="rv-title">인증 오류가 너무 잦아요</div>
-          <div class="rv-body">삼성폰 쓰는데 앱 인증 오류가 자꾸 납니다. '보안 모듈 오류'가 뜨면서 결제가 안 돼요. CS에 문의해도 '재설치하세요'만 반복합니다.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 블로그</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">현대카드 앱 먹통 이슈 정리 - 해결방법 있나요?</div>
-          <div class="rv-body">현대카드 앱이 며칠째 검은 화면만 뜨고 작동을 안 하네요. 클리앙, 뽐뿌 등에서도 같은 불만 글이 많이 보이는데 회사 측 공지는 전혀 없고 슬그머니 업데이트만 했다고 합니다. 이용자 불편 무시하는 거 아닌가요?</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 블로그</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 앱 로그인 오류 해결방법 총정리</div>
-          <div class="rv-body">현대카드 앱에서 로그인 오류가 발생하는 경우 여러 원인이 있습니다. 인증서 미등록, 보안모듈 충돌, 구버전 앱 문제 등. 가장 확실한 해결책은 앱 완전 삭제 후 재설치인데 그래도 안 되면 고객센터(1577-6000) 연락해야 합니다. 그런데 고객센터도 연결이 너무 힘들어요.</div>
-          <a href="https://toptierapp.com/entry/현대카드-앱-로그인-오류" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 카페 (스사사)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 앱 접속 오류 경험하신 분?</div>
-          <div class="rv-body">저만 그런 건지 모르겠는데 현재 접속 사용자가 많아 접속이 어렵습니다 [UIL002] 라고 뜨면서 앱이 안 열려요. 주말에 필요한 결제를 못 해서 정말 불편했습니다. 다른 카드사로 갈아타고 싶은 생각이 드네요.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 카페 (82cook)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-02</span>
-          </div>
-          <div class="rv-title">현대카드앱 이번에도 또 먹통?</div>
-          <div class="rv-body">정말 이게 몇 번째인지... 현대카드 앱 접속이 또 안 됩니다. 종이 고지서 받는 게 차라리 나을 것 같아요. 카드 디자인만 예쁠 뿐 앱 사용은 최악이에요. 주변에서도 현대카드 앱 불만 많이 들어요.</div>
-          <a href="https://www.82cook.com/entiz/read.php?bn=15&num=3190361" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">디씨인사이드</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 앱 진짜 개답답하네</div>
-          <div class="rv-body">앱 실행하면 검은화면만 뜨다가 튕겨. 다른 카드사 앱들은 멀쩡한데 현대카드만 왜 이러냐. 먹통된 거 벌써 이틀째인데 공지도 없고 진짜 최악.</div>
-          <a href="https://gall.dcinside.com/board/view/?id=card&no=7458293" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">뽐뿌 (재테크포럼)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 앱 먹통 저만 그런가요?</div>
-          <div class="rv-body">어제부터 현대카드 앱 접속이 안 됩니다. '이용자가 많아 접속 어렵습니다' 오류만 뜨고 결제도 못 하고 있어요. 다른 분들도 같은 증상 있으신가요?</div>
-          <a href="https://m.ppomppu.co.kr/new/bbs_view.php?id=money&no=459318" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">뽐뿌 (재테크포럼)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">현대카드 앱 어제 에러 난 거 해결됐나요</div>
-          <div class="rv-body">어제 현대카드 앱 에러로 못 쓰고 오늘 보니까 3.2.8 업데이트 됐네요. 업데이트 내역에는 아무 설명도 없고 그냥 슬그머니 고친 거 같은데 이게 맞나요? 사과나 보상도 없고.</div>
-          <a href="https://m.ppomppu.co.kr/new/bbs_view.php?id=money&no=459400" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          
-          <div class="rv-body">현대카드 앱 또 먹통이네 진짜 ㅋㅋ 결제하려고 켰더니 로딩만 무한반복... 이게 몇번째야 #현대카드 #앱오류</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">유튜브</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 앱 먹통 해결방법 | 오류 원인과 대처법</div>
-          <div class="rv-body">최근 현대카드 앱이 자주 먹통이 되는 원인과 해결방법을 알아봤습니다. 댓글 반응: '삭제 재설치해도 안 됨', '버전 3.2.8 업데이트 후 좀 나아진 것 같기도', '서버 문제인데 왜 공지를 안 하냐' 등 불만이 많았습니다.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">안드로이드 먹통 문제</div>
-          <div class="rv-body">앱 실행 후 검은색 배경의 로딩 화면이 뜬 채로 앱이 작동하지 않습니다. 앱 삭제 후 재설치도 해봤는데 정상 작동을 안 해요. 며칠째 이러는데 공지도 없고 정말 불편합니다.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">접속 오류 반복</div>
-          <div class="rv-body">'현재 접속 사용자가 많아 접속이 어렵습니다. 잠시 후 다시 시도해주세요[UIL002]' 메시지가 계속 뜹니다. 월말마다 이러는 건가요? 결제 확인도 못하고 너무 불편해요.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">뽐뿌 (자유게시판)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 어플 에러 나는 분들</div>
-          <div class="rv-body">저만 현대카드 앱 에러나는건 아니죠? 다른 앱들은 다 되는데 현대카드만 안됩니다. 와이파이 끄고 데이터로 바꾸니까 되더라구요. 혹시 같은 증상 있으신 분들은 한번 해보세요.</div>
-          <a href="http://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=6846523" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">클리앙</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 앱카드 실행 안됨</div>
-          <div class="rv-body">토스페이먼츠에서도 현대카드 앱카드 실행이 안된다는 문의가 올라왔네요. 개발자 커뮤니티에서도 이슈가 됐었는데 현대카드 측 서버 문제인 것 같습니다.</div>
-          <a href="https://www.clien.net/service/board/cm_iphonien/18643053" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">디씨인사이드</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">현대카드 앱 먹통 또 난거냐</div>
-          <div class="rv-body">오늘 아침부터 현대카드 앱이 안 열리는 사람? 나만 그런 건지... 지난번에도 먹통됐을 때 공지 하나 없었는데 이번에도 그러겠지 뭐. 진짜 답답하다.</div>
-          
-        </div></div>
-  </details>
+<h2><span class="bar bar-red"></span>😤 부정 리뷰 (32건)</h2>
+<div class="cluster">
+<div class="cluster-hdr">
+<span class="cluster-num">1</span>
+<span class="cluster-txt">앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요 <span class="cluster-cnt">(17건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요"</div><div class="c-action" style="color:#0071e3">→ 앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">앱 먹통 문제 해결해주세요</div>
+<div class="rv-body">며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요. 삭제 재설치해도 똑같습니다. 에러 공지도 없고 진짜 최악입니다.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">강제 종료 반복</div>
+<div class="rv-body">결제하려고 할 때 앱이 계속 강제 종료됩니다. 다운되고 먹통이 되는 게 한두 번이 아니에요. 이 정도면 진짜 못 쓰겠습니다. 다른 카드사 앱 쓰는 게 나을 것 같아요.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-02</span>
+</div>
+<div class="rv-title">인증 오류가 너무 잦아요</div>
+<div class="rv-body">삼성폰 쓰는데 앱 인증 오류가 자꾸 납니다. '보안 모듈 오류'가 뜨면서 결제가 안 돼요. CS에 문의해도 '재설치하세요'만 반복합니다.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 블로그</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">현대카드 앱 먹통 이슈 정리 - 해결방법 있나요?</div>
+<div class="rv-body">현대카드 앱이 며칠째 검은 화면만 뜨고 작동을 안 하네요. 클리앙, 뽐뿌 등에서도 같은 불만 글이 많이 보이는데 회사 측 공지는 전혀 없고 슬그머니 업데이트만 했다고 합니다. 이용자 불편 무시하는 거 아닌가요?</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 블로그</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 앱 로그인 오류 해결방법 총정리</div>
+<div class="rv-body">현대카드 앱에서 로그인 오류가 발생하는 경우 여러 원인이 있습니다. 인증서 미등록, 보안모듈 충돌, 구버전 앱 문제 등. 가장 확실한 해결책은 앱 완전 삭제 후 재설치인데 그래도 안 되면 고객센터(1577-6000) 연락해야 합니다. 그런데 고객센터도 연결이 너무 힘들어요.</div>
+<a class="rv-link" href="https://toptierapp.com/entry/현대카드-앱-로그인-오류" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 카페 (스사사)</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 앱 접속 오류 경험하신 분?</div>
+<div class="rv-body">저만 그런 건지 모르겠는데 현재 접속 사용자가 많아 접속이 어렵습니다 [UIL002] 라고 뜨면서 앱이 안 열려요. 주말에 필요한 결제를 못 해서 정말 불편했습니다. 다른 카드사로 갈아타고 싶은 생각이 드네요.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 카페 (82cook)</span>
+</div>
+<span class="rv-date">2026-03-02</span>
+</div>
+<div class="rv-title">현대카드앱 이번에도 또 먹통?</div>
+<div class="rv-body">정말 이게 몇 번째인지... 현대카드 앱 접속이 또 안 됩니다. 종이 고지서 받는 게 차라리 나을 것 같아요. 카드 디자인만 예쁠 뿐 앱 사용은 최악이에요. 주변에서도 현대카드 앱 불만 많이 들어요.</div>
+<a class="rv-link" href="https://www.82cook.com/entiz/read.php?bn=15&amp;num=3190361" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">디씨인사이드</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 앱 진짜 개답답하네</div>
+<div class="rv-body">앱 실행하면 검은화면만 뜨다가 튕겨. 다른 카드사 앱들은 멀쩡한데 현대카드만 왜 이러냐. 먹통된 거 벌써 이틀째인데 공지도 없고 진짜 최악.</div>
+<a class="rv-link" href="https://gall.dcinside.com/board/view/?id=card&amp;no=7458293" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">뽐뿌 (재테크포럼)</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 앱 먹통 저만 그런가요?</div>
+<div class="rv-body">어제부터 현대카드 앱 접속이 안 됩니다. '이용자가 많아 접속 어렵습니다' 오류만 뜨고 결제도 못 하고 있어요. 다른 분들도 같은 증상 있으신가요?</div>
+<a class="rv-link" href="https://m.ppomppu.co.kr/new/bbs_view.php?id=money&amp;no=459318" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">뽐뿌 (재테크포럼)</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">현대카드 앱 어제 에러 난 거 해결됐나요</div>
+<div class="rv-body">어제 현대카드 앱 에러로 못 쓰고 오늘 보니까 3.2.8 업데이트 됐네요. 업데이트 내역에는 아무 설명도 없고 그냥 슬그머니 고친 거 같은데 이게 맞나요? 사과나 보상도 없고.</div>
+<a class="rv-link" href="https://m.ppomppu.co.kr/new/bbs_view.php?id=money&amp;no=459400" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-body">현대카드 앱 또 먹통이네 진짜 ㅋㅋ 결제하려고 켰더니 로딩만 무한반복... 이게 몇번째야 #현대카드 #앱오류</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">유튜브</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 앱 먹통 해결방법 | 오류 원인과 대처법</div>
+<div class="rv-body">최근 현대카드 앱이 자주 먹통이 되는 원인과 해결방법을 알아봤습니다. 댓글 반응: '삭제 재설치해도 안 됨', '버전 3.2.8 업데이트 후 좀 나아진 것 같기도', '서버 문제인데 왜 공지를 안 하냐' 등 불만이 많았습니다.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">안드로이드 먹통 문제</div>
+<div class="rv-body">앱 실행 후 검은색 배경의 로딩 화면이 뜬 채로 앱이 작동하지 않습니다. 앱 삭제 후 재설치도 해봤는데 정상 작동을 안 해요. 며칠째 이러는데 공지도 없고 정말 불편합니다.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">접속 오류 반복</div>
+<div class="rv-body">'현재 접속 사용자가 많아 접속이 어렵습니다. 잠시 후 다시 시도해주세요[UIL002]' 메시지가 계속 뜹니다. 월말마다 이러는 건가요? 결제 확인도 못하고 너무 불편해요.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">뽐뿌 (자유게시판)</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 어플 에러 나는 분들</div>
+<div class="rv-body">저만 현대카드 앱 에러나는건 아니죠? 다른 앱들은 다 되는데 현대카드만 안됩니다. 와이파이 끄고 데이터로 바꾸니까 되더라구요. 혹시 같은 증상 있으신 분들은 한번 해보세요.</div>
+<a class="rv-link" href="http://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&amp;no=6846523" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">클리앙</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 앱카드 실행 안됨</div>
+<div class="rv-body">토스페이먼츠에서도 현대카드 앱카드 실행이 안된다는 문의가 올라왔네요. 개발자 커뮤니티에서도 이슈가 됐었는데 현대카드 측 서버 문제인 것 같습니다.</div>
+<a class="rv-link" href="https://www.clien.net/service/board/cm_iphonien/18643053" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">디씨인사이드</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">현대카드 앱 먹통 또 난거냐</div>
+<div class="rv-body">오늘 아침부터 현대카드 앱이 안 열리는 사람? 나만 그런 건지... 지난번에도 먹통됐을 때 공지 하나 없었는데 이번에도 그러겠지 뭐. 진짜 답답하다.</div>
+</div></div>
+</details>
 </div>
 <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">2</span>
-    <span class="cluster-txt">고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요 <span class="cluster-cnt">(6건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★☆☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">고객센터 상담 연결 진짜 힘들어요</div>
-          <div class="rv-body">앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다. 상담원 연결도 안 되고 채팅도 대기 시간이 너무 길어요.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 카페 (스사사)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 앱 고객센터 연결 최악이에요</div>
-          <div class="rv-body">앱에서 고객센터 연결하려고 했는데 진짜 빙빙 돌다가 결국 못 연결했어요. 현대카드 고객센터 연결은 정말 그지 같다는 클리앙 글에 공감 100%. 채팅 상담은 대기 너무 길고 전화는 ARS만 계속 안내합니다.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">디씨인사이드</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 고객센터 연결 진짜 불가능 수준</div>
-          <div class="rv-body">앱에서 상담 연결하려고 했는데 보이는 ARS인가 뭔가 하면서 빙빙 돌다가 결국 연결 못 함. 전화도 계속 대기중. 이게 무슨 고객센터냐.</div>
-          <a href="https://gall.dcinside.com/board/view/?id=card&no=7460572" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">클리앙</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 고객센터 연결은 정말정말 그지같네요</div>
-          <div class="rv-body">앱에서 상담 연결 시도했다가 포기하고 전화했더니 ARS만 무한반복. 결국 앱 채팅 상담 신청했는데 대기 인원만 수백명이고 연결도 안 됨. 이게 국내 카드사 탑3인 회사의 고객 응대 수준이라니.</div>
-          <a href="https://www.clien.net/service/board/park/18794494" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          
-          <div class="rv-body">현대카드 고객센터 진짜 연결 안된다 앱도 먹통에 전화도 대기만 하다 끊김 카드 해지하고 싶다 #현대카드 불만</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">유튜브</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">2026 현대카드 앱 솔직 리뷰 - 장단점 비교</div>
-          <div class="rv-body">현대카드 앱을 1년 사용한 솔직 후기입니다. 장점: 깔끔한 UI, 애플페이 연동, 소비 분석 기능. 단점: 가끔 앱 오류, 광고 많음, 고객센터 연결 어려움. 댓글: '애플페이 때문에 현대카드 쓰는 분 많죠', '앱 안정성 좀 높여줬으면'.</div>
-          
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num">2</span>
+<span class="cluster-txt">고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요 <span class="cluster-cnt">(6건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다"</div><div class="c-action" style="color:#0071e3">→ 인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★☆☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">고객센터 상담 연결 진짜 힘들어요</div>
+<div class="rv-body">앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다. 상담원 연결도 안 되고 채팅도 대기 시간이 너무 길어요.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 카페 (스사사)</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 앱 고객센터 연결 최악이에요</div>
+<div class="rv-body">앱에서 고객센터 연결하려고 했는데 진짜 빙빙 돌다가 결국 못 연결했어요. 현대카드 고객센터 연결은 정말 그지 같다는 클리앙 글에 공감 100%. 채팅 상담은 대기 너무 길고 전화는 ARS만 계속 안내합니다.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">디씨인사이드</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 고객센터 연결 진짜 불가능 수준</div>
+<div class="rv-body">앱에서 상담 연결하려고 했는데 보이는 ARS인가 뭔가 하면서 빙빙 돌다가 결국 연결 못 함. 전화도 계속 대기중. 이게 무슨 고객센터냐.</div>
+<a class="rv-link" href="https://gall.dcinside.com/board/view/?id=card&amp;no=7460572" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">클리앙</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 고객센터 연결은 정말정말 그지같네요</div>
+<div class="rv-body">앱에서 상담 연결 시도했다가 포기하고 전화했더니 ARS만 무한반복. 결국 앱 채팅 상담 신청했는데 대기 인원만 수백명이고 연결도 안 됨. 이게 국내 카드사 탑3인 회사의 고객 응대 수준이라니.</div>
+<a class="rv-link" href="https://www.clien.net/service/board/park/18794494" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-body">현대카드 고객센터 진짜 연결 안된다 앱도 먹통에 전화도 대기만 하다 끊김 카드 해지하고 싶다 #현대카드 불만</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">유튜브</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">2026 현대카드 앱 솔직 리뷰 - 장단점 비교</div>
+<div class="rv-body">현대카드 앱을 1년 사용한 솔직 후기입니다. 장점: 깔끔한 UI, 애플페이 연동, 소비 분석 기능. 단점: 가끔 앱 오류, 광고 많음, 고객센터 연결 어려움. 댓글: '애플페이 때문에 현대카드 쓰는 분 많죠', '앱 안정성 좀 높여줬으면'.</div>
+</div></div>
+</details>
 </div>
 <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">3</span>
-    <span class="cluster-txt">서버 접속 지연과 로딩 문제가 자주 발생하고 있어요 <span class="cluster-cnt">(4건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">로딩 너무 느림</div>
-          <div class="rv-body">앱 켜면 로딩이 오래 걸려요. 화면 넘길 때마다 버벅이고, 결제 내역 들어가는 데도 몇 초씩 기다려야 함. 속도 개선이 시급합니다.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">클리앙</span>
-              
-            </div>
-            <span class="rv-date">2026-03-02</span>
-          </div>
-          <div class="rv-title">현대카드 앱 먹통이 되었습니다</div>
-          <div class="rv-body">아이폰에서 현대카드 앱 열면 로딩 화면만 보이고 넘어가질 않아요. 어제부터 계속 이러는데 삭제 후 재설치해도 마찬가지네요. 현대카드 서버 쪽 문제인 것 같은데 공지가 없어서 답답합니다.</div>
-          <a href="https://www.clien.net/service/board/cm_iphonien/18643053" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          
-          <div class="rv-body">현대카드 앱 업데이트 후 뭔가 더 느려진 것 같은 기분... 전보다 로딩 시간이 길어진 느낌 #현대카드앱</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">현대카드 앱 접속 불가 - 보안뉴스</div>
-          <div class="rv-body">현대카드 앱, 어제 한때 접속 불가... '앱 이용자 많아 대기 중입니다' 로딩만. 보안뉴스 보도.</div>
-          <a href="https://x.com/boannews/status/1772428108576043176" target="_blank" class="rv-link">X에서 보기 →</a>
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num">3</span>
+<span class="cluster-txt">서버 접속 지연과 로딩 문제가 자주 발생하고 있어요 <span class="cluster-cnt">(4건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"앱 켜면 로딩이 오래 걸려요"</div><div class="c-action" style="color:#0071e3">→ 서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">로딩 너무 느림</div>
+<div class="rv-body">앱 켜면 로딩이 오래 걸려요. 화면 넘길 때마다 버벅이고, 결제 내역 들어가는 데도 몇 초씩 기다려야 함. 속도 개선이 시급합니다.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">클리앙</span>
+</div>
+<span class="rv-date">2026-03-02</span>
+</div>
+<div class="rv-title">현대카드 앱 먹통이 되었습니다</div>
+<div class="rv-body">아이폰에서 현대카드 앱 열면 로딩 화면만 보이고 넘어가질 않아요. 어제부터 계속 이러는데 삭제 후 재설치해도 마찬가지네요. 현대카드 서버 쪽 문제인 것 같은데 공지가 없어서 답답합니다.</div>
+<a class="rv-link" href="https://www.clien.net/service/board/cm_iphonien/18643053" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-body">현대카드 앱 업데이트 후 뭔가 더 느려진 것 같은 기분... 전보다 로딩 시간이 길어진 느낌 #현대카드앱</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">현대카드 앱 접속 불가 - 보안뉴스</div>
+<div class="rv-body">현대카드 앱, 어제 한때 접속 불가... '앱 이용자 많아 대기 중입니다' 로딩만. 보안뉴스 보도.</div>
+<a class="rv-link" href="https://x.com/boannews/status/1772428108576043176" target="_blank">X에서 보기 →</a>
+</div></div>
+</details>
 </div>
 <div class="cluster cluster-etc">
-  <div class="cluster-hdr">
-    <span class="cluster-num cluster-num-etc">기타</span>
-    <span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(5건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-02</span>
-          </div>
-          <div class="rv-title">자동 로그인이 계속 풀려요</div>
-          <div class="rv-body">아이폰인데 자동로그인이 자꾸 풀립니다. 쓸 때마다 다시 인증해야 해서 너무 불편해요. 이게 무슨 자동로그인인지... 빨리 수정해주세요.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">네이버 카페</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드 앱 인증 오류</div>
-          <div class="rv-body">삼성 멤버스에 올라온 글인데 현대카드 앱 인증 오류 나는 분들 있으신가요? 저는 갤럭시 쓰는데 생체인증이 자꾸 실패해서 매번 비밀번호 입력하고 있어요. 불편합니다.</div>
-          <a href="https://r1.community.samsung.com/t5/제안/현대카드-앱-인증-오류/td-p/2315590" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★★☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">앱 광고가 너무 많아요</div>
-          <div class="rv-body">메인화면에 광고성 콘텐츠가 너무 많습니다. 카드 조회 앱인데 마케팅 배너가 절반이에요. 정작 필요한 기능 찾기가 어렵습니다.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★★☆☆☆</span>
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">업데이트 후 더 느려짐</div>
-          <div class="rv-body">최근 3.2.8 업데이트 이후 앱이 더 느려졌습니다. 업데이트 내용 설명도 없고, 오히려 불편해졌어요. 뭘 개선한 건지 모르겠습니다.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neg">부정</span>
-              <span class="src-badge">클리앙</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">현대카드 문자 알림 오류</div>
-          <div class="rv-body">현대카드 문자 알림이 맛이 갔군요. 결제 알림이 제때 안 오고 몇 시간 뒤에 오거나 아예 안 오는 경우가 있어요. 앱 푸시도 마찬가지. 현대카드 측에 문의했더니 확인해보겠다고만 함.</div>
-          <a href="https://gigglehd.com/gg/bbs/7046380" target="_blank" class="rv-link">원문 보기 →</a>
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num cluster-num-etc">기타</span>
+<span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(5건)</span></span>
+</div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-02</span>
+</div>
+<div class="rv-title">자동 로그인이 계속 풀려요</div>
+<div class="rv-body">아이폰인데 자동로그인이 자꾸 풀립니다. 쓸 때마다 다시 인증해야 해서 너무 불편해요. 이게 무슨 자동로그인인지... 빨리 수정해주세요.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">네이버 카페</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드 앱 인증 오류</div>
+<div class="rv-body">삼성 멤버스에 올라온 글인데 현대카드 앱 인증 오류 나는 분들 있으신가요? 저는 갤럭시 쓰는데 생체인증이 자꾸 실패해서 매번 비밀번호 입력하고 있어요. 불편합니다.</div>
+<a class="rv-link" href="https://r1.community.samsung.com/t5/제안/현대카드-앱-인증-오류/td-p/2315590" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★★☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">앱 광고가 너무 많아요</div>
+<div class="rv-body">메인화면에 광고성 콘텐츠가 너무 많습니다. 카드 조회 앱인데 마케팅 배너가 절반이에요. 정작 필요한 기능 찾기가 어렵습니다.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★★☆☆☆</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">업데이트 후 더 느려짐</div>
+<div class="rv-body">최근 3.2.8 업데이트 이후 앱이 더 느려졌습니다. 업데이트 내용 설명도 없고, 오히려 불편해졌어요. 뭘 개선한 건지 모르겠습니다.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neg">부정</span>
+<span class="src-badge">클리앙</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">현대카드 문자 알림 오류</div>
+<div class="rv-body">현대카드 문자 알림이 맛이 갔군요. 결제 알림이 제때 안 오고 몇 시간 뒤에 오거나 아예 안 오는 경우가 있어요. 앱 푸시도 마찬가지. 현대카드 측에 문의했더니 확인해보겠다고만 함.</div>
+<a class="rv-link" href="https://gigglehd.com/gg/bbs/7046380" target="_blank">원문 보기 →</a>
+</div></div>
+</details>
 </div>
 </div>
-
 <!-- 긍정 리뷰 -->
 <div class="sec" id="sec-pos">
-  <h2><span class="bar bar-green"></span>😊 긍정 리뷰 (26건)</h2>
-  <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">1</span>
-    <span class="cluster-txt">다양한 혜택과 소비 관리 기능이 유용하다는 평가예요 <span class="cluster-cnt">(9건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★☆</span>
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">혜택 관리 편리해요</div>
-          <div class="rv-body">M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요. AI 추천 콘텐츠도 제 취향에 맞게 나와서 요즘 자주 보게 됩니다.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">LOCK&LIMIT 기능 좋아요</div>
-          <div class="rv-body">앱에서 카드 오프라인 결제만 잠글 수 있는 기능이 진짜 편합니다. 도난 걱정 없이 쓸 수 있어요. 현대카드만의 차별화 기능인 것 같습니다.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">네이버 블로그</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">현대카드 ZERO 앱 혜택 활용 꿀팁</div>
-          <div class="rv-body">현대카드 앱에서 M포인트와 캐시백 혜택을 극대화하는 방법을 정리해봤습니다. 소비 캘린더 기능으로 카테고리별 지출 관리도 되고, PAYSHOT으로 온라인 쇼핑몰에서 간편하게 결제할 수 있어서 만족하고 있어요.</div>
-          <a href="https://financewoo.com/hyundai-card-benefits" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">클리앙</span>
-              
-            </div>
-            <span class="rv-date">2026-03-07</span>
-          </div>
-          <div class="rv-title">현대카드 앱 티머니 자동충전 기능 유용하네요</div>
-          <div class="rv-body">현대카드 앱에서 티머니 잔액 부족할 때 자동으로 충전되는 기능이 생겼더라고요. 출퇴근 때 교통카드 잔액 신경 안 써도 돼서 너무 편리합니다. 이런 기능은 타 카드사에는 없는 것 같아요.</div>
-          <a href="https://www.clien.net/service/board/cm_iphonien/18794679" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          
-          <div class="rv-body">현대카드 LOCK&LIMIT 기능 덕분에 카드 도난 걱정 없이 쓸 수 있어서 너무 좋음 이런 기능은 현대카드만 있는 것 같음</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">유튜브</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드 앱 완벽 사용법 - 숨겨진 기능까지 총정리 2026</div>
-          <div class="rv-body">현대카드 앱의 소비 캘린더, LOCK&LIMIT, 로카페이 등 유용한 기능들을 정리했습니다. 특히 티머니 자동충전 기능은 꼭 써보세요. 댓글에서 '앱이 자꾸 튕긴다'는 분들이 많은데 앱 재설치 후 해결됐다는 분도 있네요.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">카드 잠금 기능 유용</div>
-          <div class="rv-body">카드를 분실했을 때 Lock&Limit으로 터치 한 번으로 잠그고 쉽게 풀 수 있어요. 이런 기능이 정말 필요했는데 잘 만들었습니다.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">AI 맞춤 추천 기능 좋음</div>
-          <div class="rv-body">앱의 대부분 영역이 AI 추천을 기반으로 하며, 메인화면 콘텐츠들은 AI 엔진이 개인의 성향과 이용 행태를 바탕으로 관심 있을 만한 콘텐츠를 제공합니다. 초개인화 소비케어도 유용해요.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">Brunch</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">서비스 벤치마킹 - 현대카드 소비잔소리</div>
-          <div class="rv-body">현대카드 앱의 소비잔소리 기능을 벤치마킹 분석해봤습니다. 정해놓은 기준 금액 초과 시 푸시 알림 기능인데, 사용자 입장에서는 굉장히 유용한 기능이에요. 다른 카드사 앱에서는 찾아보기 힘든 차별화된 서비스.</div>
-          <a href="https://brunch.co.kr/@d590968353774ad/1" target="_blank" class="rv-link">원문 보기 →</a>
-        </div></div>
-  </details>
+<h2><span class="bar bar-green"></span>😊 긍정 리뷰 (26건)</h2>
+<div class="cluster">
+<div class="cluster-hdr">
+<span class="cluster-num">1</span>
+<span class="cluster-txt">다양한 혜택과 소비 관리 기능이 유용하다는 평가예요 <span class="cluster-cnt">(9건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요"</div><div class="c-action" style="color:#1e8a3e">→ Lock&amp;Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★☆</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">혜택 관리 편리해요</div>
+<div class="rv-body">M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요. AI 추천 콘텐츠도 제 취향에 맞게 나와서 요즘 자주 보게 됩니다.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">LOCK&amp;LIMIT 기능 좋아요</div>
+<div class="rv-body">앱에서 카드 오프라인 결제만 잠글 수 있는 기능이 진짜 편합니다. 도난 걱정 없이 쓸 수 있어요. 현대카드만의 차별화 기능인 것 같습니다.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">네이버 블로그</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">현대카드 ZERO 앱 혜택 활용 꿀팁</div>
+<div class="rv-body">현대카드 앱에서 M포인트와 캐시백 혜택을 극대화하는 방법을 정리해봤습니다. 소비 캘린더 기능으로 카테고리별 지출 관리도 되고, PAYSHOT으로 온라인 쇼핑몰에서 간편하게 결제할 수 있어서 만족하고 있어요.</div>
+<a class="rv-link" href="https://financewoo.com/hyundai-card-benefits" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">클리앙</span>
+</div>
+<span class="rv-date">2026-03-07</span>
+</div>
+<div class="rv-title">현대카드 앱 티머니 자동충전 기능 유용하네요</div>
+<div class="rv-body">현대카드 앱에서 티머니 잔액 부족할 때 자동으로 충전되는 기능이 생겼더라고요. 출퇴근 때 교통카드 잔액 신경 안 써도 돼서 너무 편리합니다. 이런 기능은 타 카드사에는 없는 것 같아요.</div>
+<a class="rv-link" href="https://www.clien.net/service/board/cm_iphonien/18794679" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-body">현대카드 LOCK&amp;LIMIT 기능 덕분에 카드 도난 걱정 없이 쓸 수 있어서 너무 좋음 이런 기능은 현대카드만 있는 것 같음</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">유튜브</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드 앱 완벽 사용법 - 숨겨진 기능까지 총정리 2026</div>
+<div class="rv-body">현대카드 앱의 소비 캘린더, LOCK&amp;LIMIT, 로카페이 등 유용한 기능들을 정리했습니다. 특히 티머니 자동충전 기능은 꼭 써보세요. 댓글에서 '앱이 자꾸 튕긴다'는 분들이 많은데 앱 재설치 후 해결됐다는 분도 있네요.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">카드 잠금 기능 유용</div>
+<div class="rv-body">카드를 분실했을 때 Lock&amp;Limit으로 터치 한 번으로 잠그고 쉽게 풀 수 있어요. 이런 기능이 정말 필요했는데 잘 만들었습니다.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">AI 맞춤 추천 기능 좋음</div>
+<div class="rv-body">앱의 대부분 영역이 AI 추천을 기반으로 하며, 메인화면 콘텐츠들은 AI 엔진이 개인의 성향과 이용 행태를 바탕으로 관심 있을 만한 콘텐츠를 제공합니다. 초개인화 소비케어도 유용해요.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">Brunch</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">서비스 벤치마킹 - 현대카드 소비잔소리</div>
+<div class="rv-body">현대카드 앱의 소비잔소리 기능을 벤치마킹 분석해봤습니다. 정해놓은 기준 금액 초과 시 푸시 알림 기능인데, 사용자 입장에서는 굉장히 유용한 기능이에요. 다른 카드사 앱에서는 찾아보기 힘든 차별화된 서비스.</div>
+<a class="rv-link" href="https://brunch.co.kr/@d590968353774ad/1" target="_blank">원문 보기 →</a>
+</div></div>
+</details>
 </div>
 <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">2</span>
-    <span class="cluster-txt">깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요 <span class="cluster-cnt">(8건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">앱 디자인이 카드사 중 최고</div>
-          <div class="rv-body">현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다. 기능도 직관적으로 정리돼 있고 쓸수록 편리해요. 카드 즉시 정지/해제 기능도 유용합니다.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-08</span>
-          </div>
-          <div class="rv-title">소비 캘린더 기능 정말 유용</div>
-          <div class="rv-body">소비 캘린더에서 카테고리별로 지출 관리할 수 있어서 가계부 앱 따로 안 써도 됩니다. 직관적이고 편리하게 잘 만들어져 있어요.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">네이버 블로그</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드 앱 사용기 2026 - 애플페이 포함 솔직 리뷰</div>
-          <div class="rv-body">현대카드 앱은 카드사 앱 중에서 가장 세련되고 깔끔하다고 생각합니다. 특히 애플페이 연동이 잘 되어 있고 티머니 자동충전까지 지원하는 건 타 카드사엔 없는 강점이에요. AI 기반 개인화 추천도 실제로 잘 맞아서 유용합니다.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">Brunch</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드는 한국에서 UX를 가장 잘하는 기업이다</div>
-          <div class="rv-body">현대카드 앱을 쓰다 보면 다른 카드사 앱과 확연히 차이가 납니다. 단순히 디자인이 예쁜 게 아니라 정보 구조, 인터랙션 흐름이 사용자 중심으로 설계되어 있어요. AI 개인화 추천도 실제로 유용하게 느껴집니다.</div>
-          <a href="https://brunch.co.kr/@wjs203040/8" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">Brunch</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 ZERO 카드 앱 활용 완전 분석</div>
-          <div class="rv-body">현대카드 앱에서 ZERO 카드를 활용하는 방법을 써봤습니다. 캐시백 추적이 편리하고 소비 리포트도 직관적이에요. 다만 앱 로딩이 가끔 느리고 이벤트 팝업이 너무 많은 건 아쉽습니다.</div>
-          <a href="https://brunch.co.kr/@valuechampion/202" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">뽐뿌 (자유게시판)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">현대카드 ZERO 캐시백 앱에서 확인하는 방법</div>
-          <div class="rv-body">현대카드 앱에서 캐시백 적립 현황 확인하는 방법 공유합니다. 앱 하단 메뉴에서 내카드 → 혜택 탭 들어가면 됩니다. 앱 UX 자체는 다른 카드사보다 깔끔하게 잘 만들었어요.</div>
-          <a href="https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=6846600" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">디씨인사이드</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드가 어플은 고트임</div>
-          <div class="rv-body">혜택은 별로라도 어플은 진짜 잘 만들었다고 생각함. 카드사 어플 중에서 UI 디자인이 가장 깔끔하고 쓰기 편함. 소비잔소리 기능 같은 것도 잘 만들었고.</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">Brunch</span>
-              
-            </div>
-            <span class="rv-date">2026-03-03</span>
-          </div>
-          <div class="rv-title">현대카드 UX 철학에 대해</div>
-          <div class="rv-body">현대카드의 UX 철학은 10여년 전부터 일관되게 이어져 왔습니다. 사용자 중심의 직관적인 인터페이스, 불필요한 요소를 제거한 미니멀 디자인이 특징입니다. 소비잔소리 같은 혁신적인 기능들도 이 철학에서 나왔죠.</div>
-          <a href="https://brunch.co.kr/@crystalclear/79" target="_blank" class="rv-link">원문 보기 →</a>
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num">2</span>
+<span class="cluster-txt">깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요 <span class="cluster-cnt">(8건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다"</div><div class="c-action" style="color:#1e8a3e">→ 타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">앱 디자인이 카드사 중 최고</div>
+<div class="rv-body">현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다. 기능도 직관적으로 정리돼 있고 쓸수록 편리해요. 카드 즉시 정지/해제 기능도 유용합니다.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-08</span>
+</div>
+<div class="rv-title">소비 캘린더 기능 정말 유용</div>
+<div class="rv-body">소비 캘린더에서 카테고리별로 지출 관리할 수 있어서 가계부 앱 따로 안 써도 됩니다. 직관적이고 편리하게 잘 만들어져 있어요.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">네이버 블로그</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드 앱 사용기 2026 - 애플페이 포함 솔직 리뷰</div>
+<div class="rv-body">현대카드 앱은 카드사 앱 중에서 가장 세련되고 깔끔하다고 생각합니다. 특히 애플페이 연동이 잘 되어 있고 티머니 자동충전까지 지원하는 건 타 카드사엔 없는 강점이에요. AI 기반 개인화 추천도 실제로 잘 맞아서 유용합니다.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">Brunch</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드는 한국에서 UX를 가장 잘하는 기업이다</div>
+<div class="rv-body">현대카드 앱을 쓰다 보면 다른 카드사 앱과 확연히 차이가 납니다. 단순히 디자인이 예쁜 게 아니라 정보 구조, 인터랙션 흐름이 사용자 중심으로 설계되어 있어요. AI 개인화 추천도 실제로 유용하게 느껴집니다.</div>
+<a class="rv-link" href="https://brunch.co.kr/@wjs203040/8" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">Brunch</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 ZERO 카드 앱 활용 완전 분석</div>
+<div class="rv-body">현대카드 앱에서 ZERO 카드를 활용하는 방법을 써봤습니다. 캐시백 추적이 편리하고 소비 리포트도 직관적이에요. 다만 앱 로딩이 가끔 느리고 이벤트 팝업이 너무 많은 건 아쉽습니다.</div>
+<a class="rv-link" href="https://brunch.co.kr/@valuechampion/202" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">뽐뿌 (자유게시판)</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">현대카드 ZERO 캐시백 앱에서 확인하는 방법</div>
+<div class="rv-body">현대카드 앱에서 캐시백 적립 현황 확인하는 방법 공유합니다. 앱 하단 메뉴에서 내카드 → 혜택 탭 들어가면 됩니다. 앱 UX 자체는 다른 카드사보다 깔끔하게 잘 만들었어요.</div>
+<a class="rv-link" href="https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&amp;no=6846600" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">디씨인사이드</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드가 어플은 고트임</div>
+<div class="rv-body">혜택은 별로라도 어플은 진짜 잘 만들었다고 생각함. 카드사 어플 중에서 UI 디자인이 가장 깔끔하고 쓰기 편함. 소비잔소리 기능 같은 것도 잘 만들었고.</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">Brunch</span>
+</div>
+<span class="rv-date">2026-03-03</span>
+</div>
+<div class="rv-title">현대카드 UX 철학에 대해</div>
+<div class="rv-body">현대카드의 UX 철학은 10여년 전부터 일관되게 이어져 왔습니다. 사용자 중심의 직관적인 인터페이스, 불필요한 요소를 제거한 미니멀 디자인이 특징입니다. 소비잔소리 같은 혁신적인 기능들도 이 철학에서 나왔죠.</div>
+<a class="rv-link" href="https://brunch.co.kr/@crystalclear/79" target="_blank">원문 보기 →</a>
+</div></div>
+</details>
 </div>
 <div class="cluster">
-  <div class="cluster-hdr">
-    <span class="cluster-num">3</span>
-    <span class="cluster-txt">간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요 <span class="cluster-cnt">(8건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">애플페이 연동 너무 편해요</div>
-          <div class="rv-body">현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다. 실물 카드 없어도 아이폰으로 바로 결제되고, 티머니 자동충전까지 돼서 교통카드도 해결됐어요. 진짜 강추!</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">플레이스토어</span>
-              <span class="stars">★★★★☆</span>
-            </div>
-            <span class="rv-date">2026-03-08</span>
-          </div>
-          <div class="rv-title">간편결제 빠르고 안정적</div>
-          <div class="rv-body">로카페이로 타 카드까지 한 번에 관리하니까 정말 편해요. 결제 속도도 빠르고 안정적입니다. 만족하면서 쓰고 있어요.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&hl=ko&showAllReviews=true" target="_blank" class="rv-link">플레이스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">네이버 카페 (뱅크샐러드 카페)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">현대카드 앱 MAU 695만 - 국내 3위 달성 소식</div>
-          <div class="rv-body">현대카드 앱이 2025년 12월 기준 MAU 695만을 기록했다고 하네요. 신한SOL페이, KB Pay에 이어 3위인데 재방문율 89%는 금융권 최고 수준이라고. 앱 품질이 높아서 가능한 것 같습니다. 저도 매일 씁니다.</div>
-          <a href="https://www.banksalad.com/articles/현대카드-추천" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">디씨인사이드</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          <div class="rv-title">현대카드 앱 애플페이 연동 개꿀</div>
-          <div class="rv-body">애플페이 현대카드 단독이라 어쩔 수 없이 쓰는데 진짜 편하긴 함. 아이폰에서 탭 한 번으로 결제되는 건 다른 카드사가 못 따라옴. 앱 자체는 좀 무겁지만 그거 감안하면 쓸 만함.</div>
-          <a href="https://gall.dcinside.com/board/view/?id=card&no=7463841" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">X(트위터)</span>
-              
-            </div>
-            <span class="rv-date">2026-03-06</span>
-          </div>
-          
-          <div class="rv-body">현대카드 앱 애플페이 연동 진짜 편하다 다른 카드로 못 가겠어 탭 한 번에 결제 끝 ㅠㅠ 이 맛에 씀 #현대카드 #애플페이</div>
-          
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">Apple Pay 등록 편리</div>
-          <div class="rv-body">현대카드 앱만 있으면 지갑 앱에 카드를 쉽게 추가할 수 있습니다. 실물카드 없이 앱카드로 바로 이용 가능해서 너무 편해요.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">네이버 카페</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 iOS 앱 업데이트 - 애플페이 대응</div>
-          <div class="rv-body">현대카드 앱 iOS 업데이트 됐네요. 애플페이 대응 업데이트인데 생각보다 빠르게 지원해줬어요. 앱 UI도 조금 개선된 것 같고 전반적으로 만족스러워요.</div>
-          <a href="https://bbs.ruliweb.com/mobile/board/300008/read/2227097" target="_blank" class="rv-link">원문 보기 →</a>
-        </div>
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">유튜브</span>
-              
-            </div>
-            <span class="rv-date">2026-03-04</span>
-          </div>
-          <div class="rv-title">현대카드 앱 총정리 리뷰 2026</div>
-          <div class="rv-body">현대카드 앱의 주요 기능을 총정리해봤습니다. AI 맞춤추천, 소비케어, 앱카드 결제, 애플페이 등록까지. 전반적으로 카드사 앱 중 UI/UX가 가장 잘 만들어진 앱이라고 생각합니다.</div>
-          
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num">3</span>
+<span class="cluster-txt">간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요 <span class="cluster-cnt">(8건)</span></span>
+</div><div class="c-insight"><div class="c-quote">"현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다"</div><div class="c-action" style="color:#1e8a3e">→ 애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장</div></div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">애플페이 연동 너무 편해요</div>
+<div class="rv-body">현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다. 실물 카드 없어도 아이폰으로 바로 결제되고, 티머니 자동충전까지 돼서 교통카드도 해결됐어요. 진짜 강추!</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">플레이스토어</span>
+<span class="stars">★★★★☆</span>
+</div>
+<span class="rv-date">2026-03-08</span>
+</div>
+<div class="rv-title">간편결제 빠르고 안정적</div>
+<div class="rv-body">로카페이로 타 카드까지 한 번에 관리하니까 정말 편해요. 결제 속도도 빠르고 안정적입니다. 만족하면서 쓰고 있어요.</div>
+<a class="rv-link" href="https://play.google.com/store/apps/details?id=com.hyundaicard.appcard&amp;hl=ko&amp;showAllReviews=true" target="_blank">플레이스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">네이버 카페 (뱅크샐러드 카페)</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">현대카드 앱 MAU 695만 - 국내 3위 달성 소식</div>
+<div class="rv-body">현대카드 앱이 2025년 12월 기준 MAU 695만을 기록했다고 하네요. 신한SOL페이, KB Pay에 이어 3위인데 재방문율 89%는 금융권 최고 수준이라고. 앱 품질이 높아서 가능한 것 같습니다. 저도 매일 씁니다.</div>
+<a class="rv-link" href="https://www.banksalad.com/articles/현대카드-추천" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">디씨인사이드</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-title">현대카드 앱 애플페이 연동 개꿀</div>
+<div class="rv-body">애플페이 현대카드 단독이라 어쩔 수 없이 쓰는데 진짜 편하긴 함. 아이폰에서 탭 한 번으로 결제되는 건 다른 카드사가 못 따라옴. 앱 자체는 좀 무겁지만 그거 감안하면 쓸 만함.</div>
+<a class="rv-link" href="https://gall.dcinside.com/board/view/?id=card&amp;no=7463841" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">X(트위터)</span>
+</div>
+<span class="rv-date">2026-03-06</span>
+</div>
+<div class="rv-body">현대카드 앱 애플페이 연동 진짜 편하다 다른 카드로 못 가겠어 탭 한 번에 결제 끝 ㅠㅠ 이 맛에 씀 #현대카드 #애플페이</div>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">Apple Pay 등록 편리</div>
+<div class="rv-body">현대카드 앱만 있으면 지갑 앱에 카드를 쉽게 추가할 수 있습니다. 실물카드 없이 앱카드로 바로 이용 가능해서 너무 편해요.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">네이버 카페</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 iOS 앱 업데이트 - 애플페이 대응</div>
+<div class="rv-body">현대카드 앱 iOS 업데이트 됐네요. 애플페이 대응 업데이트인데 생각보다 빠르게 지원해줬어요. 앱 UI도 조금 개선된 것 같고 전반적으로 만족스러워요.</div>
+<a class="rv-link" href="https://bbs.ruliweb.com/mobile/board/300008/read/2227097" target="_blank">원문 보기 →</a>
+</div>
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">유튜브</span>
+</div>
+<span class="rv-date">2026-03-04</span>
+</div>
+<div class="rv-title">현대카드 앱 총정리 리뷰 2026</div>
+<div class="rv-body">현대카드 앱의 주요 기능을 총정리해봤습니다. AI 맞춤추천, 소비케어, 앱카드 결제, 애플페이 등록까지. 전반적으로 카드사 앱 중 UI/UX가 가장 잘 만들어진 앱이라고 생각합니다.</div>
+</div></div>
+</details>
 </div>
 <div class="cluster cluster-etc">
-  <div class="cluster-hdr">
-    <span class="cluster-num cluster-num-etc">기타</span>
-    <span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(1건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge pos">긍정</span>
-              <span class="src-badge">앱스토어</span>
-              <span class="stars">★★★★★</span>
-            </div>
-            <span class="rv-date">2026-03-05</span>
-          </div>
-          <div class="rv-title">앱 평점 4.8 최고</div>
-          <div class="rv-body">iOS 앱스토어 기준 4.8점, 국내 카드사 앱 중 가장 높은 평점. 앱 평가 수도 금융사 앱 중 가장 많은 20만 건 이상 기록. 재방문율 89%로 금융권 최고 수준의 리텐션.</div>
-          <a href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank" class="rv-link">앱스토어 리뷰 전체 보기 →</a>
-        </div></div>
-  </details>
+<div class="cluster-hdr">
+<span class="cluster-num cluster-num-etc">기타</span>
+<span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(1건)</span></span>
+</div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge pos">긍정</span>
+<span class="src-badge">앱스토어</span>
+<span class="stars">★★★★★</span>
+</div>
+<span class="rv-date">2026-03-05</span>
+</div>
+<div class="rv-title">앱 평점 4.8 최고</div>
+<div class="rv-body">iOS 앱스토어 기준 4.8점, 국내 카드사 앱 중 가장 높은 평점. 앱 평가 수도 금융사 앱 중 가장 많은 20만 건 이상 기록. 재방문율 89%로 금융권 최고 수준의 리텐션.</div>
+<a class="rv-link" href="https://apps.apple.com/kr/app/id702653088?see-all=reviews" target="_blank">앱스토어 리뷰 전체 보기 →</a>
+</div></div>
+</details>
 </div>
 </div>
-
 <!-- 중립 리뷰 -->
 <div class="sec" id="sec-neu">
-  <h2><span class="bar bar-gray"></span>😐 중립 리뷰 (1건)</h2>
-  <div class="cluster cluster-etc">
-  <div class="cluster-hdr">
-    <span class="cluster-num cluster-num-etc">기타</span>
-    <span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(1건)</span></span>
-  </div>
-  <details class="cluster-detail">
-    <summary class="cluster-toggle">자세히 보기</summary>
-    <div class="rv-grid cluster-cards">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-meta">
-              <span class="badge neu">중립</span>
-              <span class="src-badge">네이버 블로그</span>
-              
-            </div>
-            <span class="rv-date">2026-03-02</span>
-          </div>
-          <div class="rv-title">현대카드 앱 로그인 오류 해결방법</div>
-          <div class="rv-body">현대카드 앱 로그인이 안될 때 해결 방법을 정리했습니다. 1) 앱 캐시 삭제 2) 재설치 3) 네트워크 재설정 4) 고객센터 문의. 저는 네트워크 재설정으로 해결했어요.</div>
-          <a href="https://toptierapp.com/entry/현대카드-앱-로그인-오류/" target="_blank" class="rv-link">원문 보기 →</a>
-        </div></div>
-  </details>
+<h2><span class="bar bar-gray"></span>😐 중립 리뷰 (1건)</h2>
+<div class="cluster cluster-etc">
+<div class="cluster-hdr">
+<span class="cluster-num cluster-num-etc">기타</span>
+<span class="cluster-txt">기타 의견이에요 <span class="cluster-cnt">(1건)</span></span>
+</div>
+<details class="cluster-detail">
+<summary class="cluster-toggle">자세히 보기</summary>
+<div class="rv-grid cluster-cards">
+<div class="rv-card">
+<div class="rv-head">
+<div class="rv-meta">
+<span class="badge neu">중립</span>
+<span class="src-badge">네이버 블로그</span>
+</div>
+<span class="rv-date">2026-03-02</span>
+</div>
+<div class="rv-title">현대카드 앱 로그인 오류 해결방법</div>
+<div class="rv-body">현대카드 앱 로그인이 안될 때 해결 방법을 정리했습니다. 1) 앱 캐시 삭제 2) 재설치 3) 네트워크 재설정 4) 고객센터 문의. 저는 네트워크 재설정으로 해결했어요.</div>
+<a class="rv-link" href="https://toptierapp.com/entry/현대카드-앱-로그인-오류/" target="_blank">원문 보기 →</a>
+</div></div>
+</details>
 </div>
 </div>
-
 </div>
 <div class="footer">
   현대카드 앱 리뷰 자동 분석

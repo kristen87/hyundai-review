@@ -1072,16 +1072,30 @@ def make_cluster_html(reviews, sentiment, badge_type, review_card_fn):
         if cid not in top_ids:
             unassigned.extend(revs)
 
+    action_color = "#0071e3" if badge_type == "neg" else "#1e8a3e"
     parts = []
     for i, (cid, revs) in enumerate(valid, 1):
         cdef = next(c for c in clusters_def if c["id"] == cid)
         summary = cdef["summary"]
+        action = cdef.get("action", "")
+        # 대표 인용구
+        rep = revs[0]
+        raw = (rep.get("content") or rep.get("title") or "").strip()
+        import re as _re
+        first_sent = _re.split(r'[.!?]', raw)[0].strip()
+        quote = (first_sent[:60] + '…') if len(first_sent) > 60 else first_sent
+        insight_block = ""
+        if quote or action:
+            q = f'<div class="c-quote">"{quote}"</div>' if quote else ""
+            a = f'<div class="c-action" style="color:{action_color}">→ {action}</div>' if action else ""
+            insight_block = f'<div class="c-insight">{q}{a}</div>'
         cards = "".join(review_card_fn(r, badge_type, sentiment) for r in revs)
         parts.append(f'''<div class="cluster">
   <div class="cluster-hdr">
     <span class="cluster-num">{i}</span>
     <span class="cluster-txt">{summary} <span class="cluster-cnt">({len(revs)}건)</span></span>
   </div>
+  {insight_block}
   <details class="cluster-detail">
     <summary class="cluster-toggle">자세히 보기</summary>
     <div class="rv-grid cluster-cards">{cards}</div>
@@ -1277,7 +1291,6 @@ def generate_html_report(all_reviews, start_date, end_date):
     )
 
     neg_cluster_html = make_cluster_html(negative, "부정", "neg", review_card)
-    insight_html = make_insight_section(negative, positive)
     pos_cluster_html = make_cluster_html(positive, "긍정", "pos", review_card)
     neu_cluster_html = make_cluster_html(neutral,  "중립", "neu", review_card)
 
@@ -1332,6 +1345,10 @@ a{{color:inherit;text-decoration:none}}
 details.sec-collapsible[open] .sec-arrow{{transform:rotate(180deg)}}
 details.sec-collapsible .sec-body{{margin-top:18px}}
 .sec h2 .bar{{width:4px;height:20px;border-radius:2px;display:inline-block}}
+/* 클러스터 인사이트 */
+.c-insight{{padding:0 18px 14px}}
+.c-quote{{font-size:13px;color:#636366;font-style:italic;padding:8px 12px;background:#f5f5f7;border-radius:6px;margin-bottom:8px;line-height:1.5}}
+.c-action{{font-size:12px;font-weight:600;line-height:1.5}}
 /* 인사이트 섹션 */
 .insight-wrap{{display:flex;flex-direction:column;gap:24px}}
 .insight-label{{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.4px;padding:4px 12px;border-radius:20px;margin-bottom:12px}}
@@ -1442,12 +1459,6 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
   <h2><span class="bar bar-red"></span>🚨 이번 주 주요 이슈</h2>
   <div class="tags">{issue_tags}</div>
   {f'<div style="margin-top:20px"><p style="font-size:14px;font-weight:600;color:#30d158;margin-bottom:10px">✅ 주요 긍정 반응</p><div class="tags">{pos_tags}</div></div>' if pos_tags else ""}
-</div>
-
-<!-- 개선 기회 포인트 -->
-<div class="sec">
-  <h2><span class="bar" style="background:#6e6e73"></span>💡 개선 기회 포인트</h2>
-  {insight_html}
 </div>
 
 <!-- 소스별 현황 -->
