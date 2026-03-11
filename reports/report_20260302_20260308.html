@@ -114,9 +114,9 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 .ic-pos .ic-action{color:#1e8a3e}
 
 /* 클러스터 인사이트 */
-.c-insight{padding:0 18px 14px}
-.c-quote{font-size:13px;color:#636366;font-style:italic;padding:8px 12px;background:#f5f5f7;border-radius:6px;margin-bottom:8px;line-height:1.5}
-.c-action{font-size:12px;font-weight:600;line-height:1.5}
+.c-insight{padding:8px 18px 14px}
+.c-quote{font-size:13px;color:#636366;font-style:italic;padding:0 12px;line-height:1.5;text-align:left}
+.c-action{font-size:12px;font-weight:600;line-height:1.5;color:#000;text-align:left}
 </style>
 </head>
 <body>
@@ -124,7 +124,6 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div style="max-width:1140px;margin:0 auto">
 <h1><img alt="현대카드 앱" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAADFUlEQVR4nO3bvUorQRjG8Wdmd01qba0CaQQLa/EWbK1sLGwFsckNeAkBKy20ELwM78FOjmJnoUHIByH7niLMHD+Kc3DmOdnI84MFk8Bm5+9kNtmoA2AQGr/oA/jpFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJisZO7cOcfcfTZmvL9Bzx7Yew/vPeq6Rl3XuXdPwTxmh4z/QlAUBWazWbxdVRWqqoKZNW42h2Maj8cfon4eQ6psgcMM6HQ62N/fx87ODtbX19Fut+fP0Ky+MfDb2xseHx9xe3uL6+tr3N/fw3sPM8u2dFjK5pyzoigMgB0fH9tgMLBlNRgMrNfrGQDz3ptzLqkNAEueweEldXp6il6vF2fGcDTEw6+HrC83hpWVFXQ6HZTln9PRxcUFDg4O4qvSEmfyt387Yebu7e2ZmdlkMjEzs36/b91uNz7e5K2qKtvc3LSzs7MPYzg5OTEAVpZl6nOkLQ+tVsvu7u6srmszMzs6OvrweNgWHfJftsPDQ6vr2mazmT0/P9vq6qoB8+XivwcOs3N7ezuuYTc3N3FWhDWs6YGdc+a9t6qqDIBdXV3F8ezu7hqQNou//UkuvO3a2tqK952fn8czcFi7LOPZmOH9sXrvcXl5Ge/f2NgAkPaBKfmj8traWvx5OBxmOSksQgg9Ho8BzKO22+342HdlvRbh/fJf2ng/hhB2oTP4vWWcuZ/lHsPyT7mGU2AyBSZLvlwZzr4/SRhPjvU4OXBZlvHM+1PeRYRxFEWRvL/kwC8vL3h6egIwfx+87EajURzP6+vr/M6EiZx8NS1cVAeAyWTS+Ktnf1MUBVqtFgBgOp1iOp0m7S/rNxryVZZF0znXuK+EUuQcj2Yw2fKf9htOgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgcl+A9zy9sM62CQ5AAAAAElFTkSuQmCC" style="width:44px;height:44px;border-radius:10px;flex-shrink:0"/> 현대카드 앱 리뷰 분석</h1>
 <div class="report-nav">
-<span class="report-nav-label">리포트 선택</span>
 <select class="report-selector" id="report-selector">
 <option>로딩 중...</option>
 </select>
@@ -218,7 +217,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">1</span>
 <span class="cluster-txt">앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요 <span class="cluster-cnt">(17건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요"</div><div class="c-action" style="color:#0071e3">→ 앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보</div></div>
+</div><div class="c-insight"><div class="c-quote">"며칠 전부터 앱 실행하면 검은 화면만 뜨고 아무것도 안 돼요"</div><div class="c-action">→ 앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보 필요</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">
@@ -431,7 +430,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">2</span>
 <span class="cluster-txt">고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요 <span class="cluster-cnt">(6건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다"</div><div class="c-action" style="color:#0071e3">→ 인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선</div></div>
+</div><div class="c-insight"><div class="c-quote">"앱에서 상담 연결하려고 했더니 ARS 연결됐다가 다시 앱으로 돌아오는 반복입니다"</div><div class="c-action">→ 인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선 필요</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">
@@ -510,7 +509,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">3</span>
 <span class="cluster-txt">서버 접속 지연과 로딩 문제가 자주 발생하고 있어요 <span class="cluster-cnt">(4건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"앱 켜면 로딩이 오래 걸려요"</div><div class="c-action" style="color:#0071e3">→ 서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선</div></div>
+</div><div class="c-insight"><div class="c-quote">"앱 켜면 로딩이 오래 걸려요"</div><div class="c-action">→ 서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선 필요</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">
@@ -644,7 +643,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">1</span>
 <span class="cluster-txt">다양한 혜택과 소비 관리 기능이 유용하다는 평가예요 <span class="cluster-cnt">(9건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요"</div><div class="c-action" style="color:#1e8a3e">→ Lock&amp;Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고</div></div>
+</div><div class="c-insight"><div class="c-quote">"M포인트 적립 현황이나 혜택을 앱에서 한눈에 볼 수 있어서 좋아요"</div><div class="c-action">→ Lock&amp;Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고 가능</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">
@@ -763,7 +762,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">2</span>
 <span class="cluster-txt">깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요 <span class="cluster-cnt">(8건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다"</div><div class="c-action" style="color:#1e8a3e">→ 타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용</div></div>
+</div><div class="c-insight"><div class="c-quote">"현대카드 앱 특유의 깔끔하고 세련된 디자인이 마음에 듭니다"</div><div class="c-action">→ UI 정체성 유지 및 브랜드 자산으로 적극 활용 가능</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">
@@ -869,7 +868,7 @@ details[open]>.cluster-toggle::after{content:" ▴"}
 <div class="cluster-hdr">
 <span class="cluster-num">3</span>
 <span class="cluster-txt">간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요 <span class="cluster-cnt">(8건)</span></span>
-</div><div class="c-insight"><div class="c-quote">"현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다"</div><div class="c-action" style="color:#1e8a3e">→ 애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장</div></div>
+</div><div class="c-insight"><div class="c-quote">"현대카드 앱에서 애플페이 등록하고 쓰는데 정말 편합니다"</div><div class="c-action">→ 애플페이·간편결제 안정성 유지하며 결제 수단 연동 확장 검토 가능</div></div>
 <details class="cluster-detail">
 <summary class="cluster-toggle">자세히 보기</summary>
 <div class="rv-grid cluster-cards">

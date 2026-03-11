@@ -930,45 +930,45 @@ TOPIC_CLUSTERS = {
     "긍정": [
         {"id":"pos_design",   "keywords":["디자인","ui","ux","깔끔","직관","인터페이스","세련","미니멀","예쁘","심플"],
          "summary":"깔끔하고 직관적인 앱 디자인에 대한 만족도가 높아요",
-         "action":"타 카드사 대비 차별화 강점 — UI 정체성 유지 및 브랜드 자산으로 활용"},
+         "action":"UI 정체성 유지 및 브랜드 자산으로 적극 활용 가능"},
         {"id":"pos_payment",  "keywords":["결제","앱카드","애플페이","페이","간편결제","실물카드","nfc"],
          "summary":"간편결제와 앱카드 기능의 편의성에 만족하는 사용자가 많아요",
-         "action":"애플페이·간편결제 안정성 유지 및 결제 수단 연동 확장"},
+         "action":"애플페이·간편결제 안정성 유지하며 결제 수단 연동 확장 검토 가능"},
         {"id":"pos_feature",  "keywords":["혜택","소비잔소리","소비케어","추천","ai","잠금","lock","기능"],
          "summary":"다양한 혜택과 소비 관리 기능이 유용하다는 평가예요",
-         "action":"Lock&Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고"},
+         "action":"Lock&Limit·소비잔소리 등 독자 기능 지속 강화 및 신규 기능 설계 시 참고 가능"},
         {"id":"pos_stable",   "keywords":["빠르","안정","원활","잘됩","잘 됩","잘돼","문제없","불편없"],
          "summary":"앱이 빠르고 안정적으로 작동한다는 긍정적인 반응이에요",
-         "action":"현재 성능 기준 유지 및 개선 작업 중 성능 저하 모니터링 필수"},
+         "action":"현재 성능 기준 유지, 개선 작업 중 성능 저하 모니터링 권장"},
         {"id":"pos_easy",     "keywords":["편리","편하","간편","쉽게","쉬운","사용하기","쓰기"],
          "summary":"전반적인 사용 편의성이 타 카드사 앱보다 뛰어나다는 의견이에요",
-         "action":"직관적 사용성 원칙을 신규 기능 설계에도 일관되게 적용"},
+         "action":"직관적 사용성 원칙을 신규 기능 설계에도 일관되게 적용 권장"},
         {"id":"pos_satisfy",  "keywords":["만족","추천","최고","훌륭","완벽","강추","좋아"],
          "summary":"전반적인 앱 사용 경험에 높은 만족감을 표현하는 의견이에요",
-         "action":"높은 만족도를 리텐션 지표와 연계해 모니터링 지속"},
+         "action":"높은 만족도를 리텐션 지표와 연계해 지속 모니터링 권장"},
     ],
     "부정": [
         {"id":"neg_crash",    "keywords":["먹통","오류","에러","버그","안됩","안되","실행 안","안 됩","튕","충돌","다운","작동"],
          "summary":"앱이 실행되지 않거나 먹통이 되는 오류 문제가 반복되고 있어요",
-         "action":"앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보"},
+         "action":"앱 크래시 로그 분석 및 재현 조건 파악 → 서버·클라이언트 양측 안정성 확보 필요"},
         {"id":"neg_login",    "keywords":["로그인","인증","생체","지문","비밀번호"],
          "summary":"로그인 및 생체인증 오류로 불편을 겪는 사용자가 많아요",
-         "action":"생체인증 실패 패턴 파악 및 인증 플로우 간소화 검토"},
+         "action":"생체인증 실패 패턴 파악 및 인증 플로우 간소화 검토 필요"},
         {"id":"neg_server",   "keywords":["서버","대기","느리","느림","로딩","먹힘"],
          "phrases":["서버 접속","서버 연결","접속 불가","대기 중","페이지 로딩","앱 로딩"],
          "excludes":["고객센터","상담","콜센터"],
          "summary":"서버 접속 지연과 로딩 문제가 자주 발생하고 있어요",
-         "action":"서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선"},
+         "action":"서버 부하 임계점 파악 및 접속 대기 시 사용자 안내 UX 개선 필요"},
         {"id":"neg_ui",       "keywords":["불편","광고","스크롤","개악","기능 없","인터페이스"],
          "summary":"앱의 UI와 특정 기능에 대한 불편함이 지적되고 있어요",
-         "action":"광고성 배너 노출 방식 재검토 및 핵심 기능 접근성 개선"},
+         "action":"광고성 배너 노출 방식 재검토 및 핵심 기능 접근성 개선 필요"},
         {"id":"neg_cs",       "keywords":["고객센터","상담","콜센터","전화","문의","고객지원"],
          "phrases":["고객센터 연결","상담 연결","전화 연결","연락이 안","연결이 안","고객 서비스","고객센터 전화"],
          "summary":"고객센터 연결 및 고객 서비스 대응에 대한 불만이 있어요",
-         "action":"인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선"},
+         "action":"인앱 셀프서비스 강화 및 채팅 상담 대기 UX 개선 필요"},
         {"id":"neg_notif",    "keywords":["알림","문자","푸시","알림 안","알림이"],
          "summary":"결제 알림과 푸시 알림이 제때 오지 않는 문제가 있어요",
-         "action":"알림 딜레이 원인 파악(서버/OS 레벨) 및 푸시 발송 안정성 개선"},
+         "action":"알림 딜레이 원인 파악(서버/OS 레벨) 및 푸시 발송 안정성 개선 필요"},
     ],
     "중립": [
         {"id":"neu_inquiry",  "keywords":["방법","어떻게","문의","질문","궁금","알려"],
@@ -1072,7 +1072,6 @@ def make_cluster_html(reviews, sentiment, badge_type, review_card_fn):
         if cid not in top_ids:
             unassigned.extend(revs)
 
-    action_color = "#0071e3" if badge_type == "neg" else "#1e8a3e"
     parts = []
     for i, (cid, revs) in enumerate(valid, 1):
         cdef = next(c for c in clusters_def if c["id"] == cid)
@@ -1087,7 +1086,7 @@ def make_cluster_html(reviews, sentiment, badge_type, review_card_fn):
         insight_block = ""
         if quote or action:
             q = f'<div class="c-quote">"{quote}"</div>' if quote else ""
-            a = f'<div class="c-action" style="color:{action_color}">→ {action}</div>' if action else ""
+            a = f'<div class="c-action">→ {action}</div>' if action else ""
             insight_block = f'<div class="c-insight">{q}{a}</div>'
         cards = "".join(review_card_fn(r, badge_type, sentiment) for r in revs)
         parts.append(f'''<div class="cluster">
@@ -1346,9 +1345,9 @@ details.sec-collapsible[open] .sec-arrow{{transform:rotate(180deg)}}
 details.sec-collapsible .sec-body{{margin-top:18px}}
 .sec h2 .bar{{width:4px;height:20px;border-radius:2px;display:inline-block}}
 /* 클러스터 인사이트 */
-.c-insight{{padding:0 18px 14px}}
-.c-quote{{font-size:13px;color:#636366;font-style:italic;padding:8px 12px;background:#f5f5f7;border-radius:6px;margin-bottom:8px;line-height:1.5}}
-.c-action{{font-size:12px;font-weight:600;line-height:1.5}}
+.c-insight{{padding:8px 18px 14px}}
+.c-quote{{font-size:13px;color:#636366;font-style:italic;padding:0 12px;line-height:1.5;text-align:left}}
+.c-action{{font-size:12px;font-weight:600;line-height:1.5;color:#000;text-align:left}}
 /* 인사이트 섹션 */
 .insight-wrap{{display:flex;flex-direction:column;gap:24px}}
 .insight-label{{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.4px;padding:4px 12px;border-radius:20px;margin-bottom:12px}}
@@ -1421,7 +1420,6 @@ details[open]>.cluster-toggle::after{{content:" ▴"}}
   <div style="max-width:1140px;margin:0 auto">
     <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAADFUlEQVR4nO3bvUorQRjG8Wdmd01qba0CaQQLa/EWbK1sLGwFsckNeAkBKy20ELwM78FOjmJnoUHIByH7niLMHD+Kc3DmOdnI84MFk8Bm5+9kNtmoA2AQGr/oA/jpFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJisZO7cOcfcfTZmvL9Bzx7Yew/vPeq6Rl3XuXdPwTxmh4z/QlAUBWazWbxdVRWqqoKZNW42h2Maj8cfon4eQ6psgcMM6HQ62N/fx87ODtbX19Fut+fP0Ky+MfDb2xseHx9xe3uL6+tr3N/fw3sPM8u2dFjK5pyzoigMgB0fH9tgMLBlNRgMrNfrGQDz3ptzLqkNAEueweEldXp6il6vF2fGcDTEw6+HrC83hpWVFXQ6HZTln9PRxcUFDg4O4qvSEmfyt387Yebu7e2ZmdlkMjEzs36/b91uNz7e5K2qKtvc3LSzs7MPYzg5OTEAVpZl6nOkLQ+tVsvu7u6srmszMzs6OvrweNgWHfJftsPDQ6vr2mazmT0/P9vq6qoB8+XivwcOs3N7ezuuYTc3N3FWhDWs6YGdc+a9t6qqDIBdXV3F8ezu7hqQNou//UkuvO3a2tqK952fn8czcFi7LOPZmOH9sXrvcXl5Ge/f2NgAkPaBKfmj8traWvx5OBxmOSksQgg9Ho8BzKO22+342HdlvRbh/fJf2ng/hhB2oTP4vWWcuZ/lHsPyT7mGU2AyBSZLvlwZzr4/SRhPjvU4OXBZlvHM+1PeRYRxFEWRvL/kwC8vL3h6egIwfx+87EajURzP6+vr/M6EiZx8NS1cVAeAyWTS+Ktnf1MUBVqtFgBgOp1iOp0m7S/rNxryVZZF0znXuK+EUuQcj2Yw2fKf9htOgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgckUmEyByRSYTIHJFJhMgcl+A9zy9sM62CQ5AAAAAElFTkSuQmCC" style="width:44px;height:44px;border-radius:10px;flex-shrink:0" alt="현대카드 앱"> 현대카드 앱 리뷰 분석</h1>
     <div class="report-nav">
-      <span class="report-nav-label">리포트 선택</span>
       <select id="report-selector" class="report-selector">
         <option>로딩 중...</option>
       </select>
